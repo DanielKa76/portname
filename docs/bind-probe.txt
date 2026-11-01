@@ -1,0 +1,8 @@
+FAIL  127.0.0.1:80  EACCES
+FAIL  127.0.0.1:443  EACCES
+OK    127.0.0.1:7777
+FAIL  ::1:80  EACCES
+OK    0.0.0.0:80
+OK    :::80
+OK    :::443
+macOS: 26.6.2, node v26.8.1

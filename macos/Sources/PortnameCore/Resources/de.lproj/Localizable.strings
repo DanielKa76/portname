@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key> (wird gerade erstellt)</key>
+	<string> (wird gerade erstellt)</string>
+	<key> · %ld Dienste</key>
+	<string> · %ld Dienste</string>
+	<key>%@ im Browser öffnen</key>
+	<string>%@ im Browser öffnen</string>
+	<key>%ld Projekte · Hintergrunddienst verbunden</key>
+	<string>%ld Projekte · Hintergrunddienst verbunden</string>
+	<key>1 Std</key>
+	<string>1 Std</string>
+	<key>15 Min</key>
+	<string>15 Min</string>
+	<key>24 Std</key>
+	<string>24 Std</string>
+	<key>3 Std</key>
+	<string>3 Std</string>
+	<key>Abbrechen</key>
+	<string>Abbrechen</string>
+	<key>Abgebrochen.</key>
+	<string>Abgebrochen.</string>
+	<key>Achtung: Der laufende öffentliche Link dieses Projekts%@ wird durch das Umbenennen beendet.</key>
+	<string>Achtung: Der laufende öffentliche Link dieses Projekts%@ wird durch das Umbenennen beendet.</string>
+	<key>Aktion konnte nicht ausgeführt werden.</key>
+	<string>Aktion konnte nicht ausgeführt werden.</string>
+	<key>Aktion läuft bereits.</key>
+	<string>Aktion läuft bereits.</string>
+	<key>Aktualisieren</key>
+	<string>Aktualisieren</string>
+	<key>Alle öffentlichen Links beenden</key>
+	<string>Alle öffentlichen Links beenden</string>
+	<key>Alle öffentlichen Links beenden …</key>
+	<string>Alle öffentlichen Links beenden …</string>
+	<key>Alle öffentlichen Links jetzt beenden? Aktive Besucher werden sofort getrennt.</key>
+	<string>Alle öffentlichen Links jetzt beenden? Aktive Besucher werden sofort getrennt.</string>
+	<key>Als Hauptdienst verwenden (:%ld · %@)</key>
+	<string>Als Hauptdienst verwenden (:%ld · %@)</string>
+	<key>Antwort des Hintergrunddienstes hat die Größenbegrenzung überschritten.</key>
+	<string>Antwort des Hintergrunddienstes hat die Größenbegrenzung überschritten.</string>
+	<key>App beenden</key>
+	<string>App beenden</string>
+	<key>App beim Anmelden öffnen</key>
+	<string>App beim Anmelden öffnen</string>
+	<key>App-Bundle</key>
+	<string>App-Bundle</string>
+	<key>App-Version</key>
+	<string>App-Version</string>
+	<key>Ausgang unklar — aktuellen Zustand bitte prüfen. Letzte Aktion: „%@“.</key>
+	<string>Ausgang unklar — aktuellen Zustand bitte prüfen. Letzte Aktion: „%@“.</string>
+	<key>Autostart</key>
+	<string>Autostart</string>
+	<key>Beendet jeden öffentlichen Link über den Hintergrunddienst — lokale Adressen und WLAN-Freigaben bleiben unverändert.</key>
+	<string>Beendet jeden öffentlichen Link über den Hintergrunddienst — lokale Adressen und WLAN-Freigaben bleiben unverändert.</string>
+	<key>Beendet nur die Oberfläche — Hintergrunddienst und Freigaben laufen weiter.</key>
+	<string>Beendet nur die Oberfläche — Hintergrunddienst und Freigaben laufen weiter.</string>
+	<key>Daemon-Instanz</key>
+	<string>Daemon-Instanz</string>
+	<key>Der Hintergrunddienst antwortet nicht. Läuft er? (portname install startet ihn dauerhaft.)</key>
+	<string>Der Hintergrunddienst antwortet nicht. Läuft er? (portname install startet ihn dauerhaft.)</string>
+	<key>Der Hintergrunddienst ist veraltet (kein Protokoll v1). Bitte Daemon aktualisieren und neu starten — Anzeige funktioniert, Aktionen nicht.</key>
+	<string>Der Hintergrunddienst ist veraltet (kein Protokoll v1). Bitte Daemon aktualisieren und neu starten — Anzeige funktioniert, Aktionen nicht.</string>
+	<key>Der Hintergrunddienst meldet einen unbekannten Freigabe-Status (%@). Bitte Liste aktualisieren — es wird kein Link angezeigt, solange der Zustand unklar ist.</key>
+	<string>Der Hintergrunddienst meldet einen unbekannten Freigabe-Status (%@). Bitte Liste aktualisieren — es wird kein Link angezeigt, solange der Zustand unklar ist.</string>
+	<key>Der Name muss 1–63 Zeichen lang sein.</key>
+	<string>Der Name muss 1–63 Zeichen lang sein.</string>
+	<key>Der gewählte Hauptdienst läuft nicht mehr — es wird wieder der neueste Server verwendet.</key>
+	<string>Der gewählte Hauptdienst läuft nicht mehr — es wird wieder der neueste Server verwendet.</string>
+	<key>Der öffentliche Link für dieses Projekt ist abgelaufen oder beendet.</key>
+	<string>Der öffentliche Link für dieses Projekt ist abgelaufen oder beendet.</string>
+	<key>Der öffentliche Link für „%@“ ist nicht mehr aktiv.</key>
+	<string>Der öffentliche Link für „%@“ ist nicht mehr aktiv.</string>
+	<key>Diagnose ausblenden</key>
+	<string>Diagnose ausblenden</string>
+	<key>Diagnose · %ld Einträge</key>
+	<string>Diagnose · %ld Einträge</string>
+	<key>Dienst nicht erreichbar</key>
+	<string>Dienst nicht erreichbar</string>
+	<key>Dienst nicht erreichbar (Socket nicht gefunden).</key>
+	<string>Dienst nicht erreichbar (Socket nicht gefunden).</string>
+	<key>Dienst nicht erreichbar (Verbindung fehlgeschlagen).</key>
+	<string>Dienst nicht erreichbar (Verbindung fehlgeschlagen).</string>
+	<key>Dienst nicht erreichbar (Zugriff verweigert).</key>
+	<string>Dienst nicht erreichbar (Zugriff verweigert).</string>
+	<key>Dienste</key>
+	<string>Dienste</string>
+	<key>Dies startet nur die Menüleisten-App. Der Hintergrunddienst (LaunchAgent dev.portname.daemon) läuft unabhängig davon — Freigaben und Tunnel bleiben bei App-Ende aktiv.</key>
+	<string>Dies startet nur die Menüleisten-App. Der Hintergrunddienst (LaunchAgent dev.portname.daemon) läuft unabhängig davon — Freigaben und Tunnel bleiben bei App-Ende aktiv.</string>
+	<key>Dieser Server lauscht bereits selbst auf anderen Netzwerkschnittstellen. Portname kann das nicht abschalten.</key>
+	<string>Dieser Server lauscht bereits selbst auf anderen Netzwerkschnittstellen. Portname kann das nicht abschalten.</string>
+	<key>Dieses Fenster schließen oder die App beenden bricht den Vorgang nicht ab.</key>
+	<string>Dieses Fenster schließen oder die App beenden bricht den Vorgang nicht ab.</string>
+	<key>Einstellungen</key>
+	<string>Einstellungen</string>
+	<key>Entfernen</key>
+	<string>Entfernen</string>
+	<key>Entwicklungsbau</key>
+	<string>Entwicklungsbau</string>
+	<key>Ergebnis wird geprüft — %@</key>
+	<string>Ergebnis wird geprüft — %@</string>
+	<key>Ergebnis wird geprüft — die letzte Aktion („%@“) ist möglicherweise trotzdem ausgeführt.</key>
+	<string>Ergebnis wird geprüft — die letzte Aktion („%@“) ist möglicherweise trotzdem ausgeführt.</string>
+	<key>Erneut verbinden</key>
+	<string>Erneut verbinden</string>
+	<key>Freigabe aktiviert · Netzwerk derzeit nicht verfügbar</key>
+	<string>Freigabe aktiviert · Netzwerk derzeit nicht verfügbar</string>
+	<key>Freigabe beenden</key>
+	<string>Freigabe beenden</string>
+	<key>Freigabe beenden …</key>
+	<string>Freigabe beenden …</string>
+	<key>Freigabe-Status inkonsistent — Liste aktualisieren und erneut versuchen.</key>
+	<string>Freigabe-Status inkonsistent — Liste aktualisieren und erneut versuchen.</string>
+	<key>Freigegeben im lokalen Netz: %@</key>
+	<string>Freigegeben im lokalen Netz: %@</string>
+	<key>Für Server, die portname nicht zuordnen kann (z. B. Docker). Portname macht daraus eine HTTP-Adresse — rohe PostgreSQL-/Redis-Verbindungen bleiben unverändert.</key>
+	<string>Für Server, die portname nicht zuordnen kann (z. B. Docker). Portname macht daraus eine HTTP-Adresse — rohe PostgreSQL-/Redis-Verbindungen bleiben unverändert.</string>
+	<key>Geprüft: Ein passender öffentlicher Link für „%@“ ist jetzt aktiv (ob deine Anfrage ihn erstellt hat, ist nicht eindeutig feststellbar).</key>
+	<string>Geprüft: Ein passender öffentlicher Link für „%@“ ist jetzt aktiv (ob deine Anfrage ihn erstellt hat, ist nicht eindeutig feststellbar).</string>
+	<key>Geprüft: „%@“ wurde ausgeführt.</key>
+	<string>Geprüft: „%@“ wurde ausgeführt.</string>
+	<key>Geprüft: Zuordnung „%@“ ist jetzt sichtbar (ob deine Anfrage sie angelegt hat, ist nicht eindeutig zuordenbar).</key>
+	<string>Geprüft: Zuordnung „%@“ ist jetzt sichtbar (ob deine Anfrage sie angelegt hat, ist nicht eindeutig zuordenbar).</string>
+	<key>Gültigkeitsdauer des öffentlichen Links</key>
+	<string>Gültigkeitsdauer des öffentlichen Links</string>
+	<key>Hauptdienst auf Port %ld</key>
+	<string>Hauptdienst auf Port %ld</string>
+	<key>Hauptdienst: :%ld</key>
+	<string>Hauptdienst: :%ld</string>
+	<key>Hintergrunddienst ist veraltet — bitte Daemon aktualisieren und Link über die CLI kopieren.</key>
+	<string>Hintergrunddienst ist veraltet — bitte Daemon aktualisieren und Link über die CLI kopieren.</string>
+	<key>Hintergrunddienst jetzt neu starten? Laufende öffentliche Freigaben werden dabei beendet. Lokale Adressen bleiben bestehen.</key>
+	<string>Hintergrunddienst jetzt neu starten? Laufende öffentliche Freigaben werden dabei beendet. Lokale Adressen bleiben bestehen.</string>
+	<key>Hintergrunddienst neu starten …</key>
+	<string>Hintergrunddienst neu starten …</string>
+	<key>Hintergrunddienst wurde neu gestartet. Die Verbindung baut sich in wenigen Sekunden wieder auf.</key>
+	<string>Hintergrunddienst wurde neu gestartet. Die Verbindung baut sich in wenigen Sekunden wieder auf.</string>
+	<key>Hinweis schließen</key>
+	<string>Hinweis schließen</string>
+	<key>Hinzufügen</key>
+	<string>Hinzufügen</string>
+	<key>Im Browser öffnen</key>
+	<string>Im Browser öffnen</string>
+	<key>Im WLAN freigeben</key>
+	<string>Im WLAN freigeben</string>
+	<key>Im WLAN freigeben (%@.local)</key>
+	<string>Im WLAN freigeben (%@.local)</string>
+	<key>Jeder mit diesem Link kann auf diesen Entwicklungsserver zugreifen. Nur für Demos, nicht für sensible Daten.</key>
+	<string>Jeder mit diesem Link kann auf diesen Entwicklungsserver zugreifen. Nur für Demos, nicht für sensible Daten.</string>
+	<key>Kein Treffer für „%@“.</key>
+	<string>Kein Treffer für „%@“.</string>
+	<key>Kein öffentlicher Link für „%@“ vorhanden.</key>
+	<string>Kein öffentlicher Link für „%@“ vorhanden.</string>
+	<key>Keine Projekte entdeckt.</key>
+	<string>Keine Projekte entdeckt.</string>
+	<key>Keine Verbindung zum Hintergrunddienst.</key>
+	<string>Keine Verbindung zum Hintergrunddienst.</string>
+	<key>Kopiert</key>
+	<string>Kopiert</string>
+	<key>Laufzeit</key>
+	<string>Laufzeit</string>
+	<key>Letzter Projekt-Scan fehlgeschlagen — die Liste zeigt den vorherigen Stand. (%@)</key>
+	<string>Letzter Projekt-Scan fehlgeschlagen — die Liste zeigt den vorherigen Stand. (%@)</string>
+	<key>Link erstellen</key>
+	<string>Link erstellen</string>
+	<key>Link in die Zwischenablage kopiert.</key>
+	<string>Link in die Zwischenablage kopiert.</string>
+	<key>Liste aktualisieren</key>
+	<string>Liste aktualisieren</string>
+	<key>Logdatei im Finder zeigen</key>
+	<string>Logdatei im Finder zeigen</string>
+	<key>Login-Registrierung funktioniert nur aus einer installierten App (~/Applications), nicht aus dem Build-Verzeichnis. Status: %@</key>
+	<string>Login-Registrierung funktioniert nur aus einer installierten App (~/Applications), nicht aus dem Build-Verzeichnis. Status: %@</string>
+	<key>Lokale Adresse im Browser öffnen</key>
+	<string>Lokale Adresse im Browser öffnen</string>
+	<key>Lokale Adresse kopieren</key>
+	<string>Lokale Adresse kopieren</string>
+	<key>Läuft ab nach:</key>
+	<string>Läuft ab nach:</string>
+	<key>Manuell hinzufügen</key>
+	<string>Manuell hinzufügen</string>
+	<key>Manuell hinzufügen …</key>
+	<string>Manuell hinzufügen …</string>
+	<key>Manuelle Zuordnung entfernen …</key>
+	<string>Manuelle Zuordnung entfernen …</string>
+	<key>Manuelle Zuordnung „%@“ entfernen? (Stoppt keine fremden Server, löscht keine Dateien.)</key>
+	<string>Manuelle Zuordnung „%@“ entfernen? (Stoppt keine fremden Server, löscht keine Dateien.)</string>
+	<key>Muss mit einem Buchstaben oder einer Zahl beginnen und enden.</key>
+	<string>Muss mit einem Buchstaben oder einer Zahl beginnen und enden.</string>
+	<key>Name (z. B. api)</key>
+	<string>Name (z. B. api)</string>
+	<key>Netzwerkwechsel — das ist möglicherweise nicht mehr dasselbe vertraute WLAN. WLAN-Freigaben aus einem anderen Netz bleiben pausiert, bis du sie hier bestätigst.</key>
+	<string>Netzwerkwechsel — das ist möglicherweise nicht mehr dasselbe vertraute WLAN. WLAN-Freigaben aus einem anderen Netz bleiben pausiert, bis du sie hier bestätigst.</string>
+	<key>Neu starten</key>
+	<string>Neu starten</string>
+	<key>Neuen Link erstellen</key>
+	<string>Neuen Link erstellen</string>
+	<key>Neuer Name</key>
+	<string>Neuer Name</string>
+	<key>Neustart fehlgeschlagen: %@</key>
+	<string>Neustart fehlgeschlagen: %@</string>
+	<key>Nicht beenden</key>
+	<string>Nicht beenden</string>
+	<key>Nur Kleinbuchstaben, Zahlen und Bindestriche.</key>
+	<string>Nur Kleinbuchstaben, Zahlen und Bindestriche.</string>
+	<key>Ordner im Finder zeigen</key>
+	<string>Ordner im Finder zeigen</string>
+	<key>Port %ld, Prozess: %@. Dieser Listener ist rein diagnostisch: ein Debug-/Inspector-Port oder ein Port, den eine neuere Prozess-Generation desselben Projekts jetzt übernimmt. Andere Dienste desselben Projekts (z. B. Frontend und API mit unterschiedlichen PIDs) stehen dagegen regulär unter „Dienste“.</key>
+	<string>Port %ld, Prozess: %@. Dieser Listener ist rein diagnostisch: ein Debug-/Inspector-Port oder ein Port, den eine neuere Prozess-Generation desselben Projekts jetzt übernimmt. Andere Dienste desselben Projekts (z. B. Frontend und API mit unterschiedlichen PIDs) stehen dagegen regulär unter „Dienste“.</string>
+	<key>Port (z. B. 3000)</key>
+	<string>Port (z. B. 3000)</string>
+	<key>Port muss eine ganze Zahl zwischen 1 und 65535 sein.</key>
+	<string>Port muss eine ganze Zahl zwischen 1 und 65535 sein.</string>
+	<key>Portname steuert nur seine eigenen Freigaben. Dass dieser Server direkt aus dem Netzwerk erreichbar ist, wird dadurch nicht abgeschaltet — und ist auch kein erfolgreicher Erreichbarkeitstest von einem anderen Gerät.</key>
+	<string>Portname steuert nur seine eigenen Freigaben. Dass dieser Server direkt aus dem Netzwerk erreichbar ist, wird dadurch nicht abgeschaltet — und ist auch kein erfolgreicher Erreichbarkeitstest von einem anderen Gerät.</string>
+	<key>Projekte suchen …</key>
+	<string>Projekte suchen …</string>
+	<key>Projektordner nicht gefunden.</key>
+	<string>Projektordner nicht gefunden.</string>
+	<key>Protokoll</key>
+	<string>Protokoll</string>
+	<key>Quick Tunnels von Cloudflare bleiben Demo-Technik: kein SLA, keine SSE-Garantie. Beendet wird der Link, sobald du ihn stoppst, der Server verschwindet oder der Ziel-Port wechselt.</key>
+	<string>Quick Tunnels von Cloudflare bleiben Demo-Technik: kein SLA, keine SSE-Garantie. Beendet wird der Link, sobald du ihn stoppst, der Server verschwindet oder der Ziel-Port wechselt.</string>
+	<key>Socket</key>
+	<string>Socket</string>
+	<key>Socket-Pfad ist zu lang.</key>
+	<string>Socket-Pfad ist zu lang.</string>
+	<key>Starte einen Dev-Server — er erscheint hier innerhalb weniger Sekunden. Oder trag ihn manuell ein.</key>
+	<string>Starte einen Dev-Server — er erscheint hier innerhalb weniger Sekunden. Oder trag ihn manuell ein.</string>
+	<key>Status: %@</key>
+	<string>Status: %@</string>
+	<key>Suche leeren</key>
+	<string>Suche leeren</string>
+	<key>Systemeinstellungen öffnen</key>
+	<string>Systemeinstellungen öffnen</string>
+	<key>Umbenennen</key>
+	<string>Umbenennen</string>
+	<key>Umbenennen …</key>
+	<string>Umbenennen …</string>
+	<key>Unerwartete Link-Adresse</key>
+	<string>Unerwartete Link-Adresse</string>
+	<key>Unerwartete Link-Adresse — Öffnen wurde verweigert.</key>
+	<string>Unerwartete Link-Adresse — Öffnen wurde verweigert.</string>
+	<key>Unerwartete Projektadresse — Kopieren wurde verweigert.</key>
+	<string>Unerwartete Projektadresse — Kopieren wurde verweigert.</string>
+	<key>Unerwartete Projektadresse — Öffnen wurde verweigert.</key>
+	<string>Unerwartete Projektadresse — Öffnen wurde verweigert.</string>
+	<key>Ungültige Antwort vom Hintergrunddienst.</key>
+	<string>Ungültige Antwort vom Hintergrunddienst.</string>
+	<key>Verbinde mit Hintergrunddienst …</key>
+	<string>Verbinde mit Hintergrunddienst …</string>
+	<key>Verbindung</key>
+	<string>Verbindung</string>
+	<key>Verbindung erneut versuchen</key>
+	<string>Verbindung erneut versuchen</string>
+	<key>Verbindung verloren — zeige den letzten Stand. Riskante Aktionen sind deaktiviert.</key>
+	<string>Verbindung verloren — zeige den letzten Stand. Riskante Aktionen sind deaktiviert.</string>
+	<key>Verbindung zum Hintergrunddienst wurde unerwartet beendet.</key>
+	<string>Verbindung zum Hintergrunddienst wurde unerwartet beendet.</string>
+	<key>Verstanden</key>
+	<string>Verstanden</string>
+	<key>WLAN</key>
+	<string>WLAN</string>
+	<key>WLAN (pausiert)</key>
+	<string>WLAN (pausiert)</string>
+	<key>WLAN-Freigabe ausschalten</key>
+	<string>WLAN-Freigabe ausschalten</string>
+	<key>WLAN-Freigabe beenden</key>
+	<string>WLAN-Freigabe beenden</string>
+	<key>WLAN-Freigabe bestätigen</key>
+	<string>WLAN-Freigabe bestätigen</string>
+	<key>WLAN-Freigabe bleibt gewünscht, ist aber derzeit pausiert: Der Hintergrunddienst gewährt gerade keinen Zugriff (Ziel nicht frisch verifiziert). Das Beenden der Freigabe bleibt möglich.</key>
+	<string>WLAN-Freigabe bleibt gewünscht, ist aber derzeit pausiert: Der Hintergrunddienst gewährt gerade keinen Zugriff (Ziel nicht frisch verifiziert). Das Beenden der Freigabe bleibt möglich.</string>
+	<key>WLAN-Freigabe bleibt gewünscht, ist aber derzeit pausiert: Der Hintergrunddienst gewährt gerade keinen Zugriff. Das Beenden der Freigabe bleibt möglich.</key>
+	<string>WLAN-Freigabe bleibt gewünscht, ist aber derzeit pausiert: Der Hintergrunddienst gewährt gerade keinen Zugriff. Das Beenden der Freigabe bleibt möglich.</string>
+	<key>WLAN-Freigabe pausiert — der Hintergrunddienst gewährt derzeit keinen WLAN-Zugriff.</key>
+	<string>WLAN-Freigabe pausiert — der Hintergrunddienst gewährt derzeit keinen WLAN-Zugriff.</string>
+	<key>WLAN-Freigabe pausiert: Der Router dieses Netzes ist noch nicht erkannt (z. B. kurz nach dem Aufwachen). Sobald der bestätigte Router erkannt ist, geht es von selbst weiter.</key>
+	<string>WLAN-Freigabe pausiert: Der Router dieses Netzes ist noch nicht erkannt (z. B. kurz nach dem Aufwachen). Sobald der bestätigte Router erkannt ist, geht es von selbst weiter.</string>
+	<key>WLAN-Freigabe pausiert: Router noch nicht erkannt (z. B. kurz nach dem Aufwachen) — Zugriff ist solange gesperrt. Im bestätigten Netz geht es von selbst weiter, sobald der Router erkannt ist.</key>
+	<string>WLAN-Freigabe pausiert: Router noch nicht erkannt (z. B. kurz nach dem Aufwachen) — Zugriff ist solange gesperrt. Im bestätigten Netz geht es von selbst weiter, sobald der Router erkannt ist.</string>
+	<key>WLAN-Freigabe pausiert: Sie stammt aus einer älteren Version und ist noch an kein Ziel gebunden. Bitte einmal bestätigen.</key>
+	<string>WLAN-Freigabe pausiert: Sie stammt aus einer älteren Version und ist noch an kein Ziel gebunden. Bitte einmal bestätigen.</string>
+	<key>WLAN-Freigabe pausiert: Sie wurde für ein anderes Netz bestätigt (anderes Subnetz oder anderer Router). Erst nach Bestätigung in diesem Netz erreichbar.</key>
+	<string>WLAN-Freigabe pausiert: Sie wurde für ein anderes Netz bestätigt (anderes Subnetz oder anderer Router). Erst nach Bestätigung in diesem Netz erreichbar.</string>
+	<key>WLAN-Freigabe pausiert: Sie wurde in einem anderen Netz bestätigt. Erst nach Bestätigung in diesem Netz erreichbar.</key>
+	<string>WLAN-Freigabe pausiert: Sie wurde in einem anderen Netz bestätigt. Erst nach Bestätigung in diesem Netz erreichbar.</string>
+	<key>WLAN-Freigabe pausiert: Unter diesem Namen läuft jetzt ein anderer Dienst (anderer Port oder anderes Programm). Erst nach Bestätigung im WLAN erreichbar.</key>
+	<string>WLAN-Freigabe pausiert: Unter diesem Namen läuft jetzt ein anderer Dienst (anderer Port oder anderes Programm). Erst nach Bestätigung im WLAN erreichbar.</string>
+	<key>WLAN-Freigabe pausiert: Ziel geändert — bestätigt war :%ld (%@), jetzt :%ld (%@). „WLAN-Freigabe bestätigen“ gibt das neue Ziel frei.</key>
+	<string>WLAN-Freigabe pausiert: Ziel geändert — bestätigt war :%ld (%@), jetzt :%ld (%@). „WLAN-Freigabe bestätigen“ gibt das neue Ziel frei.</string>
+	<key>WLAN-Freigabe pausiert: Ziel geändert — jetzt :%ld (%@). „WLAN-Freigabe bestätigen“ gibt das neue Ziel frei.</key>
+	<string>WLAN-Freigabe pausiert: Ziel geändert — jetzt :%ld (%@). „WLAN-Freigabe bestätigen“ gibt das neue Ziel frei.</string>
+	<key>WLAN-Freigabe pausiert: Ziel nicht (mehr) verifiziert — Zugriff ist solange gesperrt. Sobald der Hintergrunddienst das Ziel wieder frisch sieht, greift die Freigabe erneut.</key>
+	<string>WLAN-Freigabe pausiert: Ziel nicht (mehr) verifiziert — Zugriff ist solange gesperrt. Sobald der Hintergrunddienst das Ziel wieder frisch sieht, greift die Freigabe erneut.</string>
+	<key>WLAN-Freigabe pausiert: bestätigt im Netz %@, jetzt %@. Erst nach Bestätigung in diesem Netz erreichbar.</key>
+	<string>WLAN-Freigabe pausiert: bestätigt im Netz %@, jetzt %@. Erst nach Bestätigung in diesem Netz erreichbar.</string>
+	<key>WLAN-Freigabe pausiert: gleicher Adressbereich (%@), aber ein anderer Router als bei der Bestätigung. Erst nach Bestätigung in diesem Netz erreichbar.</key>
+	<string>WLAN-Freigabe pausiert: gleicher Adressbereich (%@), aber ein anderer Router als bei der Bestätigung. Erst nach Bestätigung in diesem Netz erreichbar.</string>
+	<key>WLAN-Freigabe pausiert: seit dem Update noch nicht bestätigt — Zugriff ist solange gesperrt. „WLAN-Freigabe bestätigen“ gibt :%ld (%@) im WLAN frei.</key>
+	<string>WLAN-Freigabe pausiert: seit dem Update noch nicht bestätigt — Zugriff ist solange gesperrt. „WLAN-Freigabe bestätigen“ gibt :%ld (%@) im WLAN frei.</string>
+	<key>WLAN-Freigabe wartet nicht mehr auf eine Bestätigung — Liste wurde neu geladen.</key>
+	<string>WLAN-Freigabe wartet nicht mehr auf eine Bestätigung — Liste wurde neu geladen.</string>
+	<key>Wartung</key>
+	<string>Wartung</string>
+	<key>Weitere Aktionen für %@</key>
+	<string>Weitere Aktionen für %@</string>
+	<key>Wird erstellt …</key>
+	<string>Wird erstellt …</string>
+	<key>Wird neu gestartet …</key>
+	<string>Wird neu gestartet …</string>
+	<key>Wirklich alle beenden</key>
+	<string>Wirklich alle beenden</string>
+	<key>Wirklich beenden</key>
+	<string>Wirklich beenden</string>
+	<key>Zeitüberschreitung beim Hintergrunddienst.</key>
+	<string>Zeitüberschreitung beim Hintergrunddienst.</string>
+	<key>Ziel hat sich inzwischen geändert — Liste wurde neu geladen. Bitte Aktion erneut ausführen.</key>
+	<string>Ziel hat sich inzwischen geändert — Liste wurde neu geladen. Bitte Aktion erneut ausführen.</string>
+	<key>Ziel zuletzt verifiziert vor %ld s.</key>
+	<string>Ziel zuletzt verifiziert vor %ld s.</string>
+	<key>Zurück</key>
+	<string>Zurück</string>
+	<key>Zustand</key>
+	<string>Zustand</string>
+	<key>inkompatibles Protokoll (Daemon aktualisieren)</key>
+	<string>inkompatibles Protokoll (Daemon aktualisieren)</string>
+	<key>launchctl kickstart wurde mit Status %ld beendet%@. Ist der Hintergrunddienst über portname install eingerichtet?</key>
+	<string>launchctl kickstart wurde mit Status %ld beendet%@. Ist der Hintergrunddienst über portname install eingerichtet?</string>
+	<key>nicht erreichbar</key>
+	<string>nicht erreichbar</string>
+	<key>portname-Einstellungen</key>
+	<string>portname-Einstellungen</string>
+	<key>unbekannt</key>
+	<string>unbekannt</string>
+	<key>unbekannter Fehler</key>
+	<string>unbekannter Fehler</string>
+	<key>unversioniert (alter Daemon)</key>
+	<string>unversioniert (alter Daemon)</string>
+	<key>verbindet …</key>
+	<string>verbindet …</string>
+	<key>verbunden</key>
+	<string>verbunden</string>
+	<key>Älterer Hintergrunddienst — neue Aktionen deaktiviert</key>
+	<string>Älterer Hintergrunddienst — neue Aktionen deaktiviert</string>
+	<key>Öffentlich · %@</key>
+	<string>Öffentlich · %@</string>
+	<key>Öffentliche Adresse (nur dieses Muster — der vollständige geheime Link wird erst beim Kopieren/Öffnen geholt):</key>
+	<string>Öffentliche Adresse (nur dieses Muster — der vollständige geheime Link wird erst beim Kopieren/Öffnen geholt):</string>
+	<key>Öffentlichen Link jetzt beenden? Aktive Besucher werden sofort getrennt.</key>
+	<string>Öffentlichen Link jetzt beenden? Aktive Besucher werden sofort getrennt.</string>
+	<key>Öffentlichen Link kopieren</key>
+	<string>Öffentlichen Link kopieren</string>
+	<key>Öffentlicher Link beenden</key>
+	<string>Öffentlicher Link beenden</string>
+	<key>Öffentlicher Link erstellen</key>
+	<string>Öffentlicher Link erstellen</string>
+	<key>Öffentlicher Link für „%@“</key>
+	<string>Öffentlicher Link für „%@“</string>
+	<key>Öffentlicher Link hat sich geändert — Liste wurde neu geladen.</key>
+	<string>Öffentlicher Link hat sich geändert — Liste wurde neu geladen.</string>
+	<key>Öffentlicher Link läuft in %@ ab (aus der echten Ablaufzeit des Dienstes).</key>
+	<string>Öffentlicher Link läuft in %@ ab (aus der echten Ablaufzeit des Dienstes).</string>
+	<key>Öffentlicher Link wird erstellt … Das dauert bis zu einer Minute.</key>
+	<string>Öffentlicher Link wird erstellt … Das dauert bis zu einer Minute.</string>
+	<key>Öffentlicher Link wird erstellt. Das dauert bis zu einer Minute.</key>
+	<string>Öffentlicher Link wird erstellt. Das dauert bis zu einer Minute.</string>
+	<key>Öffentlicher Link …</key>
+	<string>Öffentlicher Link …</string>
+	<key>Über</key>
+	<string>Über</string>
+	<key>„%@“ umbenennen</key>
+	<string>„%@“ umbenennen</string>
+	<key>„App beenden“ schließt nur die Oberfläche: Hintergrunddienst und %ld öffentliche(r) Link(s) laufen weiter.</key>
+	<string>„App beenden“ schließt nur die Oberfläche: Hintergrunddienst und %ld öffentliche(r) Link(s) laufen weiter.</string>
+	<key>→ :%ld</key>
+	<string>→ :%ld</string>
+	<key>⚠ Server bindet auch außerhalb von localhost</key>
+	<string>⚠ Server bindet auch außerhalb von localhost</string>
+</dict>
+</plist>

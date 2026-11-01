@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key> (wird gerade erstellt)</key>
+	<string> (currently being created)</string>
+	<key> · %ld Dienste</key>
+	<string> · %ld services</string>
+	<key>%@ im Browser öffnen</key>
+	<string>Open %@ in browser</string>
+	<key>%ld Projekte · Hintergrunddienst verbunden</key>
+	<string>%ld projects · daemon connected</string>
+	<key>1 Std</key>
+	<string>1 hr</string>
+	<key>15 Min</key>
+	<string>15 min</string>
+	<key>24 Std</key>
+	<string>24 hrs</string>
+	<key>3 Std</key>
+	<string>3 hrs</string>
+	<key>Abbrechen</key>
+	<string>Cancel</string>
+	<key>Abgebrochen.</key>
+	<string>Cancelled.</string>
+	<key>Achtung: Der laufende öffentliche Link dieses Projekts%@ wird durch das Umbenennen beendet.</key>
+	<string>Note: renaming will end this project's running public link%@.</string>
+	<key>Aktion konnte nicht ausgeführt werden.</key>
+	<string>The action could not be performed.</string>
+	<key>Aktion läuft bereits.</key>
+	<string>An action is already running.</string>
+	<key>Aktualisieren</key>
+	<string>Refresh</string>
+	<key>Alle öffentlichen Links beenden</key>
+	<string>End all public links</string>
+	<key>Alle öffentlichen Links beenden …</key>
+	<string>End all public links …</string>
+	<key>Alle öffentlichen Links jetzt beenden? Aktive Besucher werden sofort getrennt.</key>
+	<string>End all public links now? Active visitors are disconnected immediately.</string>
+	<key>Als Hauptdienst verwenden (:%ld · %@)</key>
+	<string>Use as primary service (:%ld · %@)</string>
+	<key>Antwort des Hintergrunddienstes hat die Größenbegrenzung überschritten.</key>
+	<string>The daemon's response exceeded the size limit.</string>
+	<key>App beenden</key>
+	<string>Quit App</string>
+	<key>App beim Anmelden öffnen</key>
+	<string>Open App at Login</string>
+	<key>App-Bundle</key>
+	<string>App Bundle</string>
+	<key>App-Version</key>
+	<string>App Version</string>
+	<key>Ausgang unklar — aktuellen Zustand bitte prüfen. Letzte Aktion: „%@“.</key>
+	<string>Outcome unknown — please check the current state. Last action: “%@”.</string>
+	<key>Autostart</key>
+	<string>Startup</string>
+	<key>Beendet jeden öffentlichen Link über den Hintergrunddienst — lokale Adressen und WLAN-Freigaben bleiben unverändert.</key>
+	<string>Ends every public link via the daemon — local addresses and Wi-Fi exposure stay unchanged.</string>
+	<key>Beendet nur die Oberfläche — Hintergrunddienst und Freigaben laufen weiter.</key>
+	<string>Quits this UI only — the daemon and all shares keep running.</string>
+	<key>Daemon-Instanz</key>
+	<string>Daemon instance</string>
+	<key>Der Hintergrunddienst antwortet nicht. Läuft er? (portname install startet ihn dauerhaft.)</key>
+	<string>The daemon is not responding. Is it running? (portname install starts it permanently.)</string>
+	<key>Der Hintergrunddienst ist veraltet (kein Protokoll v1). Bitte Daemon aktualisieren und neu starten — Anzeige funktioniert, Aktionen nicht.</key>
+	<string>The daemon is outdated (no protocol v1). Please update and restart the daemon — display works, actions do not.</string>
+	<key>Der Hintergrunddienst meldet einen unbekannten Freigabe-Status (%@). Bitte Liste aktualisieren — es wird kein Link angezeigt, solange der Zustand unklar ist.</key>
+	<string>The daemon reports an unknown share state (%@). Please refresh the list — no link is shown while the state is unclear.</string>
+	<key>Der Name muss 1–63 Zeichen lang sein.</key>
+	<string>The name must be 1–63 characters long.</string>
+	<key>Der gewählte Hauptdienst läuft nicht mehr — es wird wieder der neueste Server verwendet.</key>
+	<string>The chosen primary service is no longer running — the newest server is used again.</string>
+	<key>Der öffentliche Link für dieses Projekt ist abgelaufen oder beendet.</key>
+	<string>The public link for this project has expired or was ended.</string>
+	<key>Der öffentliche Link für „%@“ ist nicht mehr aktiv.</key>
+	<string>The public link for “%@” is no longer active.</string>
+	<key>Diagnose ausblenden</key>
+	<string>Hide diagnostics</string>
+	<key>Diagnose · %ld Einträge</key>
+	<string>Diagnostics · %ld entries</string>
+	<key>Dienst nicht erreichbar</key>
+	<string>Daemon unreachable</string>
+	<key>Dienst nicht erreichbar (Socket nicht gefunden).</key>
+	<string>Daemon unreachable (socket not found).</string>
+	<key>Dienst nicht erreichbar (Verbindung fehlgeschlagen).</key>
+	<string>Daemon unreachable (connection failed).</string>
+	<key>Dienst nicht erreichbar (Zugriff verweigert).</key>
+	<string>Daemon unreachable (permission denied).</string>
+	<key>Dienste</key>
+	<string>Services</string>
+	<key>Dies startet nur die Menüleisten-App. Der Hintergrunddienst (LaunchAgent dev.portname.daemon) läuft unabhängig davon — Freigaben und Tunnel bleiben bei App-Ende aktiv.</key>
+	<string>This starts only the menubar app. The daemon (LaunchAgent dev.portname.daemon) runs independently — shares and tunnels survive app exit.</string>
+	<key>Dieser Server lauscht bereits selbst auf anderen Netzwerkschnittstellen. Portname kann das nicht abschalten.</key>
+	<string>This server is already listening on other network interfaces on its own. portname cannot switch that off.</string>
+	<key>Dieses Fenster schließen oder die App beenden bricht den Vorgang nicht ab.</key>
+	<string>Closing this window or quitting the app does not cancel this.</string>
+	<key>Einstellungen</key>
+	<string>Settings</string>
+	<key>Entfernen</key>
+	<string>Remove</string>
+	<key>Entwicklungsbau</key>
+	<string>Development build</string>
+	<key>Ergebnis wird geprüft — %@</key>
+	<string>Verifying outcome — %@</string>
+	<key>Ergebnis wird geprüft — die letzte Aktion („%@“) ist möglicherweise trotzdem ausgeführt.</key>
+	<string>Verifying outcome — the last action (“%@”) may have taken effect anyway.</string>
+	<key>Erneut verbinden</key>
+	<string>Reconnect</string>
+	<key>Freigabe aktiviert · Netzwerk derzeit nicht verfügbar</key>
+	<string>Exposure enabled · network currently unavailable</string>
+	<key>Freigabe beenden</key>
+	<string>End share</string>
+	<key>Freigabe beenden …</key>
+	<string>End share …</string>
+	<key>Freigabe-Status inkonsistent — Liste aktualisieren und erneut versuchen.</key>
+	<string>Share state inconsistent — refresh the list and retry.</string>
+	<key>Freigegeben im lokalen Netz: %@</key>
+	<string>Shared on the local network: %@</string>
+	<key>Für Server, die portname nicht zuordnen kann (z. B. Docker). Portname macht daraus eine HTTP-Adresse — rohe PostgreSQL-/Redis-Verbindungen bleiben unverändert.</key>
+	<string>For servers portname cannot attribute (e.g. Docker). portname turns them into an HTTP address — raw PostgreSQL/Redis connections stay untouched.</string>
+	<key>Geprüft: Ein passender öffentlicher Link für „%@“ ist jetzt aktiv (ob deine Anfrage ihn erstellt hat, ist nicht eindeutig feststellbar).</key>
+	<string>Verified: a matching public link for “%@” is now active (whether your request created it cannot be determined).</string>
+	<key>Geprüft: „%@“ wurde ausgeführt.</key>
+	<string>Verified: “%@” was carried out.</string>
+	<key>Geprüft: Zuordnung „%@“ ist jetzt sichtbar (ob deine Anfrage sie angelegt hat, ist nicht eindeutig zuordenbar).</key>
+	<string>Verified: mapping “%@” is now visible (whether your request created it cannot be attributed).</string>
+	<key>Gültigkeitsdauer des öffentlichen Links</key>
+	<string>Public link lifetime</string>
+	<key>Hauptdienst auf Port %ld</key>
+	<string>Primary service on port %ld</string>
+	<key>Hauptdienst: :%ld</key>
+	<string>Primary service: :%ld</string>
+	<key>Hintergrunddienst ist veraltet — bitte Daemon aktualisieren und Link über die CLI kopieren.</key>
+	<string>The daemon is outdated — please update it and copy the link via the CLI.</string>
+	<key>Hintergrunddienst jetzt neu starten? Laufende öffentliche Freigaben werden dabei beendet. Lokale Adressen bleiben bestehen.</key>
+	<string>Restart the daemon now? Running public links are ended. Local addresses remain.</string>
+	<key>Hintergrunddienst neu starten …</key>
+	<string>Restart daemon …</string>
+	<key>Hintergrunddienst wurde neu gestartet. Die Verbindung baut sich in wenigen Sekunden wieder auf.</key>
+	<string>The daemon was restarted. The connection re-establishes itself in a few seconds.</string>
+	<key>Hinweis schließen</key>
+	<string>Dismiss note</string>
+	<key>Hinzufügen</key>
+	<string>Add</string>
+	<key>Im Browser öffnen</key>
+	<string>Open in Browser</string>
+	<key>Im WLAN freigeben</key>
+	<string>Share on Wi-Fi</string>
+	<key>Im WLAN freigeben (%@.local)</key>
+	<string>Share on Wi-Fi (%@.local)</string>
+	<key>Jeder mit diesem Link kann auf diesen Entwicklungsserver zugreifen. Nur für Demos, nicht für sensible Daten.</key>
+	<string>Anyone with this link can access this development server. For demos only, not for sensitive data.</string>
+	<key>Kein Treffer für „%@“.</key>
+	<string>No match for “%@”.</string>
+	<key>Kein öffentlicher Link für „%@“ vorhanden.</key>
+	<string>There is no public link for “%@”.</string>
+	<key>Keine Projekte entdeckt.</key>
+	<string>No projects discovered.</string>
+	<key>Keine Verbindung zum Hintergrunddienst.</key>
+	<string>No connection to the daemon.</string>
+	<key>Kopiert</key>
+	<string>Copied</string>
+	<key>Laufzeit</key>
+	<string>Duration</string>
+	<key>Letzter Projekt-Scan fehlgeschlagen — die Liste zeigt den vorherigen Stand. (%@)</key>
+	<string>The last project scan failed — the list shows the previous state. (%@)</string>
+	<key>Link erstellen</key>
+	<string>Create link</string>
+	<key>Link in die Zwischenablage kopiert.</key>
+	<string>Link copied to the clipboard.</string>
+	<key>Liste aktualisieren</key>
+	<string>Refresh list</string>
+	<key>Logdatei im Finder zeigen</key>
+	<string>Show log file in Finder</string>
+	<key>Login-Registrierung funktioniert nur aus einer installierten App (~/Applications), nicht aus dem Build-Verzeichnis. Status: %@</key>
+	<string>Login registration only works from an installed app (~/Applications), not from the build directory. Status: %@</string>
+	<key>Lokale Adresse im Browser öffnen</key>
+	<string>Open local address in browser</string>
+	<key>Lokale Adresse kopieren</key>
+	<string>Copy local address</string>
+	<key>Läuft ab nach:</key>
+	<string>Expires after:</string>
+	<key>Manuell hinzufügen</key>
+	<string>Add manually</string>
+	<key>Manuell hinzufügen …</key>
+	<string>Add manually …</string>
+	<key>Manuelle Zuordnung entfernen …</key>
+	<string>Remove manual mapping …</string>
+	<key>Manuelle Zuordnung „%@“ entfernen? (Stoppt keine fremden Server, löscht keine Dateien.)</key>
+	<string>Remove manual mapping “%@”? (Stops no foreign servers, deletes no files.)</string>
+	<key>Muss mit einem Buchstaben oder einer Zahl beginnen und enden.</key>
+	<string>Must start and end with a letter or digit.</string>
+	<key>Name (z. B. api)</key>
+	<string>Name (e.g. api)</string>
+	<key>Netzwerkwechsel — das ist möglicherweise nicht mehr dasselbe vertraute WLAN. WLAN-Freigaben aus einem anderen Netz bleiben pausiert, bis du sie hier bestätigst.</key>
+	<string>Network change — this may no longer be the same trusted Wi-Fi. Wi-Fi exposures confirmed on another network stay paused until you confirm them here.</string>
+	<key>Neu starten</key>
+	<string>Restart</string>
+	<key>Neuen Link erstellen</key>
+	<string>Create a new link</string>
+	<key>Neuer Name</key>
+	<string>New name</string>
+	<key>Neustart fehlgeschlagen: %@</key>
+	<string>Restart failed: %@</string>
+	<key>Nicht beenden</key>
+	<string>Don't End</string>
+	<key>Nur Kleinbuchstaben, Zahlen und Bindestriche.</key>
+	<string>Only lowercase letters, digits and hyphens.</string>
+	<key>Ordner im Finder zeigen</key>
+	<string>Reveal folder in Finder</string>
+	<key>Port %ld, Prozess: %@. Dieser Listener ist rein diagnostisch: ein Debug-/Inspector-Port oder ein Port, den eine neuere Prozess-Generation desselben Projekts jetzt übernimmt. Andere Dienste desselben Projekts (z. B. Frontend und API mit unterschiedlichen PIDs) stehen dagegen regulär unter „Dienste“.</key>
+	<string>Port %ld, process: %@. This listener is purely diagnostic: a debug/inspector port, or a port that a newer process generation of the same project is now taking over. Other services of the same project (e.g. frontend and API with different PIDs) appear regularly under “Services”.</string>
+	<key>Port (z. B. 3000)</key>
+	<string>Port (e.g. 3000)</string>
+	<key>Port muss eine ganze Zahl zwischen 1 und 65535 sein.</key>
+	<string>Port must be an integer between 1 and 65535.</string>
+	<key>Portname steuert nur seine eigenen Freigaben. Dass dieser Server direkt aus dem Netzwerk erreichbar ist, wird dadurch nicht abgeschaltet — und ist auch kein erfolgreicher Erreichbarkeitstest von einem anderen Gerät.</key>
+	<string>portname only controls its own shares. That this server is directly reachable from the network is not switched off by this — and it is not a successful reachability test from another device either.</string>
+	<key>Projekte suchen …</key>
+	<string>Search projects …</string>
+	<key>Projektordner nicht gefunden.</key>
+	<string>Project folder not found.</string>
+	<key>Protokoll</key>
+	<string>Protocol</string>
+	<key>Quick Tunnels von Cloudflare bleiben Demo-Technik: kein SLA, keine SSE-Garantie. Beendet wird der Link, sobald du ihn stoppst, der Server verschwindet oder der Ziel-Port wechselt.</key>
+	<string>Cloudflare Quick Tunnels remain demo technology: no SLA, no SSE guarantee. The link ends as soon as you stop it, the server disappears, or the target port changes.</string>
+	<key>Socket</key>
+	<string>Socket</string>
+	<key>Socket-Pfad ist zu lang.</key>
+	<string>Socket path is too long.</string>
+	<key>Starte einen Dev-Server — er erscheint hier innerhalb weniger Sekunden. Oder trag ihn manuell ein.</key>
+	<string>Start a dev server — it appears here within seconds. Or register it manually.</string>
+	<key>Status: %@</key>
+	<string>Status: %@</string>
+	<key>Suche leeren</key>
+	<string>Clear search</string>
+	<key>Systemeinstellungen öffnen</key>
+	<string>Open System Settings</string>
+	<key>Umbenennen</key>
+	<string>Rename</string>
+	<key>Umbenennen …</key>
+	<string>Rename …</string>
+	<key>Unerwartete Link-Adresse</key>
+	<string>Unexpected link address</string>
+	<key>Unerwartete Link-Adresse — Öffnen wurde verweigert.</key>
+	<string>Unexpected link address — opening was refused.</string>
+	<key>Unerwartete Projektadresse — Kopieren wurde verweigert.</key>
+	<string>Unexpected project address — copying was refused.</string>
+	<key>Unerwartete Projektadresse — Öffnen wurde verweigert.</key>
+	<string>Unexpected project address — opening was refused.</string>
+	<key>Ungültige Antwort vom Hintergrunddienst.</key>
+	<string>Invalid response from the daemon.</string>
+	<key>Verbinde mit Hintergrunddienst …</key>
+	<string>Connecting to daemon …</string>
+	<key>Verbindung</key>
+	<string>Connection</string>
+	<key>Verbindung erneut versuchen</key>
+	<string>Retry connection</string>
+	<key>Verbindung verloren — zeige den letzten Stand. Riskante Aktionen sind deaktiviert.</key>
+	<string>Connection lost — showing the last known state. Risky actions are disabled.</string>
+	<key>Verbindung zum Hintergrunddienst wurde unerwartet beendet.</key>
+	<string>The connection to the daemon was terminated unexpectedly.</string>
+	<key>Verstanden</key>
+	<string>Understood</string>
+	<key>WLAN</key>
+	<string>Wi-Fi</string>
+	<key>WLAN (pausiert)</key>
+	<string>Wi-Fi (paused)</string>
+	<key>WLAN-Freigabe ausschalten</key>
+	<string>Turn Off Wi-Fi Exposure</string>
+	<key>WLAN-Freigabe beenden</key>
+	<string>End Wi-Fi Exposure</string>
+	<key>WLAN-Freigabe bestätigen</key>
+	<string>Confirm Wi-Fi Exposure</string>
+	<key>WLAN-Freigabe bleibt gewünscht, ist aber derzeit pausiert: Der Hintergrunddienst gewährt gerade keinen Zugriff (Ziel nicht frisch verifiziert). Das Beenden der Freigabe bleibt möglich.</key>
+	<string>The Wi-Fi exposure is still requested but currently paused: the daemon is not granting access right now (target not freshly verified). Ending the exposure remains possible.</string>
+	<key>WLAN-Freigabe bleibt gewünscht, ist aber derzeit pausiert: Der Hintergrunddienst gewährt gerade keinen Zugriff. Das Beenden der Freigabe bleibt möglich.</key>
+	<string>The Wi-Fi exposure is still requested but currently paused: the daemon is not granting access right now. Ending the exposure remains possible.</string>
+	<key>WLAN-Freigabe pausiert — der Hintergrunddienst gewährt derzeit keinen WLAN-Zugriff.</key>
+	<string>Wi-Fi exposure paused — the daemon is not granting Wi-Fi access right now.</string>
+	<key>WLAN-Freigabe pausiert: Der Router dieses Netzes ist noch nicht erkannt (z. B. kurz nach dem Aufwachen). Sobald der bestätigte Router erkannt ist, geht es von selbst weiter.</key>
+	<string>Wi-Fi exposure paused: this network's router is not identified yet (e.g. just after wake). It resumes by itself once the confirmed router is identified.</string>
+	<key>WLAN-Freigabe pausiert: Router noch nicht erkannt (z. B. kurz nach dem Aufwachen) — Zugriff ist solange gesperrt. Im bestätigten Netz geht es von selbst weiter, sobald der Router erkannt ist.</key>
+	<string>Wi-Fi exposure paused: router not identified yet (e.g. just after wake) — access is withheld meanwhile. On the confirmed network it resumes by itself once the router is identified.</string>
+	<key>WLAN-Freigabe pausiert: Sie stammt aus einer älteren Version und ist noch an kein Ziel gebunden. Bitte einmal bestätigen.</key>
+	<string>Wi-Fi exposure paused: it was set up with an older version and is not bound to a target yet. Please confirm it once.</string>
+	<key>WLAN-Freigabe pausiert: Sie wurde für ein anderes Netz bestätigt (anderes Subnetz oder anderer Router). Erst nach Bestätigung in diesem Netz erreichbar.</key>
+	<string>Wi-Fi exposure paused: it was confirmed for another network (another subnet or router). Reachable on this network only after you confirm it.</string>
+	<key>WLAN-Freigabe pausiert: Sie wurde in einem anderen Netz bestätigt. Erst nach Bestätigung in diesem Netz erreichbar.</key>
+	<string>Wi-Fi exposure paused: it was confirmed on another network. Reachable on this network only after you confirm it.</string>
+	<key>WLAN-Freigabe pausiert: Unter diesem Namen läuft jetzt ein anderer Dienst (anderer Port oder anderes Programm). Erst nach Bestätigung im WLAN erreichbar.</key>
+	<string>Wi-Fi exposure paused: a different service (another port or program) now runs under this name. Reachable on Wi-Fi only after you confirm it.</string>
+	<key>WLAN-Freigabe pausiert: Ziel geändert — bestätigt war :%ld (%@), jetzt :%ld (%@). „WLAN-Freigabe bestätigen“ gibt das neue Ziel frei.</key>
+	<string>Wi-Fi exposure paused: target changed — confirmed was :%ld (%@), now :%ld (%@). “Confirm Wi-Fi Exposure” shares the new target.</string>
+	<key>WLAN-Freigabe pausiert: Ziel geändert — jetzt :%ld (%@). „WLAN-Freigabe bestätigen“ gibt das neue Ziel frei.</key>
+	<string>Wi-Fi exposure paused: target changed — now :%ld (%@). “Confirm Wi-Fi Exposure” shares the new target.</string>
+	<key>WLAN-Freigabe pausiert: Ziel nicht (mehr) verifiziert — Zugriff ist solange gesperrt. Sobald der Hintergrunddienst das Ziel wieder frisch sieht, greift die Freigabe erneut.</key>
+	<string>Wi-Fi exposure paused: target not (or no longer) verified — access is withheld meanwhile. As soon as the daemon freshly verifies the target again, the exposure takes effect.</string>
+	<key>WLAN-Freigabe pausiert: bestätigt im Netz %@, jetzt %@. Erst nach Bestätigung in diesem Netz erreichbar.</key>
+	<string>Wi-Fi exposure paused: confirmed on network %@, now %@. Reachable on this network only after you confirm it.</string>
+	<key>WLAN-Freigabe pausiert: gleicher Adressbereich (%@), aber ein anderer Router als bei der Bestätigung. Erst nach Bestätigung in diesem Netz erreichbar.</key>
+	<string>Wi-Fi exposure paused: same address range (%@), but a different router than the one it was confirmed with. Reachable on this network only after you confirm it.</string>
+	<key>WLAN-Freigabe pausiert: seit dem Update noch nicht bestätigt — Zugriff ist solange gesperrt. „WLAN-Freigabe bestätigen“ gibt :%ld (%@) im WLAN frei.</key>
+	<string>Wi-Fi exposure paused: not confirmed since the update — access is withheld meanwhile. “Confirm Wi-Fi Exposure” shares :%ld (%@) on Wi-Fi.</string>
+	<key>WLAN-Freigabe wartet nicht mehr auf eine Bestätigung — Liste wurde neu geladen.</key>
+	<string>The Wi-Fi exposure no longer awaits a confirmation — the list was reloaded.</string>
+	<key>Wartung</key>
+	<string>Maintenance</string>
+	<key>Weitere Aktionen für %@</key>
+	<string>More actions for %@</string>
+	<key>Wird erstellt …</key>
+	<string>Creating …</string>
+	<key>Wird neu gestartet …</key>
+	<string>Restarting …</string>
+	<key>Wirklich alle beenden</key>
+	<string>Really End All</string>
+	<key>Wirklich beenden</key>
+	<string>Really End</string>
+	<key>Zeitüberschreitung beim Hintergrunddienst.</key>
+	<string>The daemon timed out.</string>
+	<key>Ziel hat sich inzwischen geändert — Liste wurde neu geladen. Bitte Aktion erneut ausführen.</key>
+	<string>The target changed in the meantime — the list was reloaded. Please perform the action again.</string>
+	<key>Ziel zuletzt verifiziert vor %ld s.</key>
+	<string>Target last verified %ld s ago.</string>
+	<key>Zurück</key>
+	<string>Back</string>
+	<key>Zustand</key>
+	<string>State</string>
+	<key>inkompatibles Protokoll (Daemon aktualisieren)</key>
+	<string>incompatible protocol (update daemon)</string>
+	<key>launchctl kickstart wurde mit Status %ld beendet%@. Ist der Hintergrunddienst über portname install eingerichtet?</key>
+	<string>launchctl kickstart exited with status %ld%@. Is the daemon set up via portname install?</string>
+	<key>nicht erreichbar</key>
+	<string>unreachable</string>
+	<key>portname-Einstellungen</key>
+	<string>portname Settings</string>
+	<key>unbekannt</key>
+	<string>unknown</string>
+	<key>unbekannter Fehler</key>
+	<string>unknown error</string>
+	<key>unversioniert (alter Daemon)</key>
+	<string>unversioned (old daemon)</string>
+	<key>verbindet …</key>
+	<string>connecting …</string>
+	<key>verbunden</key>
+	<string>connected</string>
+	<key>Älterer Hintergrunddienst — neue Aktionen deaktiviert</key>
+	<string>Outdated daemon — new actions disabled</string>
+	<key>Öffentlich · %@</key>
+	<string>Public · %@</string>
+	<key>Öffentliche Adresse (nur dieses Muster — der vollständige geheime Link wird erst beim Kopieren/Öffnen geholt):</key>
+	<string>Public address (only this pattern — the full secret link is fetched only when copying/opening):</string>
+	<key>Öffentlichen Link jetzt beenden? Aktive Besucher werden sofort getrennt.</key>
+	<string>End the public link now? Active visitors are disconnected immediately.</string>
+	<key>Öffentlichen Link kopieren</key>
+	<string>Copy Public Link</string>
+	<key>Öffentlicher Link beenden</key>
+	<string>End public link</string>
+	<key>Öffentlicher Link erstellen</key>
+	<string>Create public link</string>
+	<key>Öffentlicher Link für „%@“</key>
+	<string>Public link for “%@”</string>
+	<key>Öffentlicher Link hat sich geändert — Liste wurde neu geladen.</key>
+	<string>The public link changed — the list was reloaded.</string>
+	<key>Öffentlicher Link läuft in %@ ab (aus der echten Ablaufzeit des Dienstes).</key>
+	<string>The public link expires in %@ (from the daemon's real expiry time).</string>
+	<key>Öffentlicher Link wird erstellt … Das dauert bis zu einer Minute.</key>
+	<string>The public link is being created … This can take up to a minute.</string>
+	<key>Öffentlicher Link wird erstellt. Das dauert bis zu einer Minute.</key>
+	<string>The public link is being created. This can take up to a minute.</string>
+	<key>Öffentlicher Link …</key>
+	<string>Public link …</string>
+	<key>Über</key>
+	<string>About</string>
+	<key>„%@“ umbenennen</key>
+	<string>Rename “%@”</string>
+	<key>„App beenden“ schließt nur die Oberfläche: Hintergrunddienst und %ld öffentliche(r) Link(s) laufen weiter.</key>
+	<string>“Quit App” closes only this UI: the daemon and %ld public link(s) keep running.</string>
+	<key>→ :%ld</key>
+	<string>→ :%ld</string>
+	<key>⚠ Server bindet auch außerhalb von localhost</key>
+	<string>⚠ Server also binds outside localhost</string>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+{
+  "name": "portname",
+  "version": "0.1.0",
+  "description": "Every local project gets a real, stable name — name.localhost on this Mac, name.local on your Wi-Fi, temporary public links via Cloudflare Tunnel.",
+  "license": "MIT",
+  "private": true,
+  "bin": {
+    "portname": "bin/portname.js"
+  },
+  "scripts": {
+    "test": "node --test 'test/**/*.test.js'"
+  },
+  "engines": {
+    "node": "^22.23.4 || ^24.22.1 || >=26.12.1"
+  }
+}
