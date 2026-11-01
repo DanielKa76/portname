@@ -102,6 +102,17 @@ const CONTENT_RULES = [
   { id: 'internal-reference', severity: 'review', re: /Prompt[- ]?\d|PR #\d+|\bthis PR\b|\bdiese[sn]? PRs?\b|[.]video_agent|[.]v2c\b|\b[Rr]eview (?:BLOCKER|MAJOR|MINOR|NIT|NOTE|F\d)|\b(?:sec-[a-z-]+|robustness|performance|currency|publication|critic)#\d|\bscratchpad\/|(?:\/\/|#|\*|<!--|\btest\()[^\n]*?(?<![-\w/.])F\d{1,2}\b/g },
 ];
 
+// Prose rules describe text a person wrote. In binary data (images,
+// archives) their patterns match random bytes, so binary content skips them;
+// the credential and path rules still run on it.
+const PROSE_RULES = new Set(['internal-reference']);
+const BINARY_PATH = /\.(?:png|jpe?g|gif|webp|ico|icns|pdf|zip|gz|tgz)$/i;
+
+// git's own heuristic: a NUL byte near the start means binary.
+function looksBinary(buf) {
+  return buf.subarray(0, 8000).includes(0);
+}
+
 const FILENAME_RULES = [
   { id: 'env-file', severity: 'critical', re: /(?:^|\/)\.env(?:\..*)?$/ },
   { id: 'key-file', severity: 'critical', re: /\.(?:pem|p12|pfx|key)$|(^|\/)id_(?:rsa|ed25519|ecdsa)(?:\.|$)/ },
@@ -189,11 +200,12 @@ function historyLogArgs(versionText) {
   return passes;
 }
 
-function scanText(area, label, text, findings) {
+function scanText(area, label, text, findings, { binary = false } = {}) {
   const lines = text.split('\n');
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     for (const rule of CONTENT_RULES) {
+      if (binary && PROSE_RULES.has(rule.id)) continue;
       rule.re.lastIndex = 0;
       let m = rule.re.exec(line);
       while (m !== null) {
@@ -220,8 +232,8 @@ function scanWorktree(repo, area, files, findings) {
       continue; // deleted in worktree; history scan still covers it
     }
     if (!stat.isFile()) continue;
-    const text = fs.readFileSync(abs, 'utf8');
-    scanText(area, rel, text, findings);
+    const buf = fs.readFileSync(abs);
+    scanText(area, rel, buf.toString('utf8'), findings, { binary: looksBinary(buf) });
   }
 }
 
@@ -249,6 +261,7 @@ function scanLogPatches(repo, args, findings) {
     });
     let buf = '';
     let commit = '(unknown)';
+    let binaryFile = false;
     const handleLine = (rawLine) => {
       const line = rawLine.replace(/\r$/, '');
       const hdr = line.match(/^\x1e([0-9a-f]{40})\x1f(.*)$/);
@@ -256,9 +269,16 @@ function scanLogPatches(repo, args, findings) {
         commit = hdr[1].slice(0, 12);
         return;
       }
+      const file = line.match(/^diff --git a\/.* b\/(.*)$/);
+      if (file) {
+        binaryFile = BINARY_PATH.test(file[1]);
+        return;
+      }
       if (!line.startsWith('+') || line.startsWith('+++')) return;
       const content = line.slice(1);
+      const binary = binaryFile || content.includes('\0');
       for (const rule of CONTENT_RULES) {
+        if (binary && PROSE_RULES.has(rule.id)) continue;
         rule.re.lastIndex = 0;
         let m = rule.re.exec(content);
         while (m !== null) {
@@ -482,4 +502,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { scanText, redactFor, dedupe, walk, CONTENT_RULES, FILENAME_RULES, scanWorktree, inventoryRefs, resolveRepo, mergeDiffArg, historyLogArgs };
+module.exports = { looksBinary, scanText, redactFor, dedupe, walk, CONTENT_RULES, FILENAME_RULES, scanWorktree, inventoryRefs, resolveRepo, mergeDiffArg, historyLogArgs };

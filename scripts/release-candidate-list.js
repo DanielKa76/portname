@@ -70,6 +70,7 @@ const INCLUDE_RULES = [
   { pattern: 'docs/release-checklist.md', reason: 'release checklist documentation' },
   { pattern: 'docs/architecture-notes.md', reason: 're-stated factual architecture decisions (public replacement for private plan notes)' },
   { pattern: 'docs/bind-probe.txt', reason: 'measured unprivileged bind probe referenced by README' },
+  { pattern: 'docs/images/*.png', reason: 'README screenshots of the menubar app (real app, demo projects, metadata stripped)' },
 ];
 
 const EXCLUDE_RULES = [

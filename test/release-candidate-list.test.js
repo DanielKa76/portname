@@ -51,7 +51,9 @@ const {
   globMatch,
 } = require('../scripts/release-candidate-list.js');
 const {
+  looksBinary,
   scanText,
+  scanWorktree,
   dedupe,
   redactFor,
   CONTENT_RULES,
@@ -163,10 +165,14 @@ test('candidate files carry no internal process references and no real home fold
   // every /Users/ path for review).
   const hits = [];
   for (const { path: p } of classifyFiles(trackedFiles()).included) {
-    const text = fs.readFileSync(path.join(ROOT, p), 'utf8');
-    text.split('\n').forEach((line, i) => {
-      if (INTERNAL_REFERENCE.test(line)) hits.push(`${p}:${i + 1}: internal reference`);
-    });
+    const buf = fs.readFileSync(path.join(ROOT, p));
+    const text = buf.toString('utf8');
+    // Images carry no prose; random bytes would match the prose rule.
+    if (!looksBinary(buf)) {
+      text.split('\n').forEach((line, i) => {
+        if (INTERNAL_REFERENCE.test(line)) hits.push(`${p}:${i + 1}: internal reference`);
+      });
+    }
     const homes = realHomeFolders(text).length;
     if (homes > 0) hits.push(`${p}: ${homes} home folder(s) outside the fixture names`);
   }
@@ -630,6 +636,55 @@ test('scan-release-secrets: lines that only an octopus merge adds are scanned', 
     assert.ok(findings.some((f) => f.area === 'history' && f.severity === 'critical' && f.location.startsWith(octopus.slice(0, 12))),
       `expected a history finding in the octopus merge ${octopus.slice(0, 12)}`);
     assert.ok(!JSON.stringify(findings).includes(key), 'the secret itself must never be printed');
+  } finally {
+    fs.rmSync(tmp, { recursive: true, force: true });
+  }
+});
+
+// Compressed image data contains comment-like byte runs by chance.
+function binaryWithProseShape() {
+  const tag = ['# ', 'F', '12'].join('');
+  return Buffer.concat([Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0, 0, 0, 13]), Buffer.from(`\n${tag}\n`)]);
+}
+
+test('scanWorktree: binary files skip the prose rule but keep the credential rules', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'scan-binary.'));
+  try {
+    const key = ['AKIA', '13579BDF2468ACE0'].join('');
+    fs.writeFileSync(path.join(tmp, 'shot.png'), binaryWithProseShape());
+    fs.writeFileSync(path.join(tmp, 'key.png'), Buffer.concat([binaryWithProseShape(), Buffer.from(`k=${key}\n`)]));
+    fs.writeFileSync(path.join(tmp, 'notes.md'), binaryWithProseShape().subarray(12).toString('utf8'));
+    assert.ok(looksBinary(fs.readFileSync(path.join(tmp, 'shot.png'))));
+    assert.ok(!looksBinary(fs.readFileSync(path.join(tmp, 'notes.md'))));
+    const findings = [];
+    scanWorktree(tmp, 'staging', ['shot.png', 'key.png', 'notes.md'], findings);
+    assert.deepEqual(findings.filter((f) => f.rule === 'internal-reference').map((f) => f.location), ['notes.md:2']);
+    assert.ok(findings.some((f) => f.location.startsWith('key.png') && f.severity === 'critical'),
+      'a credential inside a binary file is still critical');
+  } finally {
+    fs.rmSync(tmp, { recursive: true, force: true });
+  }
+});
+
+test('scan-release-secrets: added images in history skip the prose rule', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'scan-binary-history.'));
+  try {
+    const home = path.join(tmp, 'home');
+    fs.mkdirSync(home);
+    const { git, scan } = scratchGit(home);
+    const repo = path.join(tmp, 'repo');
+    fs.mkdirSync(repo);
+    git(repo, 'init', '-q', '-b', 'main');
+    fs.writeFileSync(path.join(repo, 'shot.png'), binaryWithProseShape());
+    git(repo, 'add', 'shot.png');
+    git(repo, 'commit', '-q', '-m', 'screenshot');
+    fs.rmSync(path.join(repo, 'shot.png'));
+    git(repo, 'add', '-A');
+    git(repo, 'commit', '-q', '-m', 'drop screenshot');
+    const json = path.join(tmp, 'out.json');
+    scan('--repo', repo, '--json', json);
+    const { findings } = JSON.parse(fs.readFileSync(json, 'utf8'));
+    assert.deepEqual(findings.filter((f) => f.area === 'history' && f.rule === 'internal-reference'), []);
   } finally {
     fs.rmSync(tmp, { recursive: true, force: true });
   }

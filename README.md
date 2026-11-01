@@ -2,6 +2,13 @@
 
 Every local project gets a real, stable address — whatever port it landed on.
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/panel-dark.png">
+    <img src="docs/images/panel-light.png" width="466" alt="The portname menubar panel: five local projects with their .localhost names; blog is shared on the Wi-Fi, shop has a public link">
+  </picture>
+</p>
+
 ```
 proj.localhost        this Mac
 proj.local            your Wi-Fi (one switch per project)
@@ -66,6 +73,21 @@ portname doctor                 # read-only checks with concrete remedies
 portname status --json          # machine-readable diagnosis (no secrets, no project paths)
 portname uninstall
 ```
+
+## Menubar app
+
+The optional menubar app lists the same projects. Per project it opens or
+copies the address, renames it, picks the primary service, and switches
+Wi-Fi sharing and the public link on or off. The app is only a client of
+the daemon: quitting it leaves the daemon and any running public link
+alone, and the panel says so while a link is up.
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/share-dark.png">
+    <img src="docs/images/share-light.png" width="466" alt="The public link view for the project shop: the public origin without its secret token, the remaining time, when the target was last verified, and buttons to copy, open or end the link">
+  </picture>
+</p>
 
 ## How it works
 
