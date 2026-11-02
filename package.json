@@ -1,6 +1,6 @@
 {
   "name": "portname",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Every local project gets a real, stable name — name.localhost on this Mac, name.local on your Wi-Fi, temporary public links via Cloudflare Tunnel.",
   "license": "MIT",
   "private": true,

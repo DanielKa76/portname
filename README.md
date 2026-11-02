@@ -27,14 +27,14 @@ Apple silicon and macOS 14 or later, and brings its own Node runtime and
 
 1. Download `Portname-macos.zip`, unzip it and move `Portname.app` to
    `/Applications`.
-2. Set up the background daemon once. It runs as your user; no admin
-   password:
+2. Open Portname. It lives in the menu bar.
+3. On first start the panel offers **Set Up Background Service**. One click
+   installs the daemon that finds your dev servers. It runs as your user,
+   needs no admin password and starts at login. The same from a terminal:
 
    ```bash
    /Applications/Portname.app/Contents/Resources/bin/portname-cli install
    ```
-
-3. Open Portname. It lives in the menu bar.
 
 For the `portname` command in a terminal, link the bundled wrapper into a
 directory on your `PATH`, for example:
@@ -217,7 +217,7 @@ daemon, discovery, shares, and the menubar app are re-stated factually in
 
 ## Status
 
-v0.1.0 — gateway core, discovery + Wi-Fi and public sharing, followed by
+v0.1.1 — gateway core, discovery + Wi-Fi and public sharing, followed by
 hardening: bounded discovery, share freshness/revocation, daemon lifecycle
 states, and the native menubar app in `macos/` — a pure client of the same
 control socket, never a second daemon.
