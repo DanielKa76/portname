@@ -10,6 +10,8 @@
 	<string>Open %@ in browser</string>
 	<key>%ld Projekte · Hintergrunddienst verbunden</key>
 	<string>%ld projects · daemon connected</string>
+	<key>1 Projekt · Hintergrunddienst verbunden</key>
+	<string>1 project · daemon connected</string>
 	<key>1 Std</key>
 	<string>1 hr</string>
 	<key>15 Min</key>
@@ -76,6 +78,8 @@
 	<string>Hide diagnostics</string>
 	<key>Diagnose · %ld Einträge</key>
 	<string>Diagnostics · %ld entries</string>
+	<key>Diagnose · 1 Eintrag</key>
+	<string>Diagnostics · 1 entry</string>
 	<key>Dienst nicht erreichbar</key>
 	<string>Daemon unreachable</string>
 	<key>Dienst nicht erreichbar (Socket nicht gefunden).</key>
@@ -119,7 +123,7 @@
 	<key>Geprüft: Ein passender öffentlicher Link für „%@“ ist jetzt aktiv (ob deine Anfrage ihn erstellt hat, ist nicht eindeutig feststellbar).</key>
 	<string>Verified: a matching public link for “%@” is now active (whether your request created it cannot be determined).</string>
 	<key>Geprüft: „%@“ wurde ausgeführt.</key>
-	<string>Verified: “%@” was carried out.</string>
+	<string>Done: the daemon confirmed “%@”.</string>
 	<key>Geprüft: Zuordnung „%@“ ist jetzt sichtbar (ob deine Anfrage sie angelegt hat, ist nicht eindeutig zuordenbar).</key>
 	<string>Verified: mapping “%@” is now visible (whether your request created it cannot be attributed).</string>
 	<key>Gültigkeitsdauer des öffentlichen Links</key>
@@ -354,7 +358,7 @@
 	<string>Copy Public Link</string>
 	<key>Öffentlicher Link beenden</key>
 	<string>End public link</string>
-	<key>Öffentlicher Link erstellen</key>
+	<key>Öffentlichen Link erstellen</key>
 	<string>Create public link</string>
 	<key>Öffentlicher Link für „%@“</key>
 	<string>Public link for “%@”</string>
@@ -372,11 +376,29 @@
 	<string>About</string>
 	<key>„%@“ umbenennen</key>
 	<string>Rename “%@”</string>
-	<key>„App beenden“ schließt nur die Oberfläche: Hintergrunddienst und %ld öffentliche(r) Link(s) laufen weiter.</key>
-	<string>“Quit App” closes only this UI: the daemon and %ld public link(s) keep running.</string>
+	<key>„App beenden“ schließt nur die Oberfläche: Hintergrunddienst und öffentlicher Link laufen weiter.</key>
+	<string>“Quit App” closes only this UI: the daemon and the public link keep running.</string>
+	<key>„App beenden“ schließt nur die Oberfläche: Hintergrunddienst und %ld öffentliche Links laufen weiter.</key>
+	<string>“Quit App” closes only this UI: the daemon and %ld public links keep running.</string>
 	<key>→ :%ld</key>
 	<string>→ :%ld</string>
 	<key>⚠ Server bindet auch außerhalb von localhost</key>
 	<string>⚠ Server also binds outside localhost</string>
+	<key>Hintergrunddienst noch nicht eingerichtet</key>
+	<string>Background service not set up yet</string>
+	<key>Einmal einrichten</key>
+	<string>One-time setup</string>
+	<key>Portname braucht einen kleinen Hintergrunddienst, der deine Dev-Server findet. Er läuft unter deinem Benutzer, braucht kein Admin-Passwort und startet beim Anmelden.</key>
+	<string>Portname needs a small background service that finds your dev servers. It runs as your user, needs no admin password and starts at login.</string>
+	<key>Hintergrunddienst einrichten</key>
+	<string>Set Up Background Service</string>
+	<key>Wird eingerichtet …</key>
+	<string>Setting up …</string>
+	<key>Einrichtung fehlgeschlagen: %@</key>
+	<string>Setup failed: %@</string>
+	<key>Der Dienst ist eingerichtet, antwortet aber noch nicht. Bitte gleich erneut verbinden.</key>
+	<string>The service is set up but not answering yet. Reconnect in a moment.</string>
+	<key>portname-cli install wurde mit Status %ld beendet.</key>
+	<string>portname-cli install exited with status %ld.</string>
 </dict>
 </plist>

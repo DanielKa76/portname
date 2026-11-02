@@ -92,12 +92,25 @@ public struct PendingReconciliation: Equatable, Sendable {
 
 /// Inline feedback bound to one route (or nil route for global actions).
 public struct RouteFeedback: Equatable, Sendable {
+    /// How the panel presents the line. A confirmed success must not look
+    /// like a warning, and an observation is neither.
+    public enum Kind: Equatable, Sendable {
+        /// Something failed, was refused or is unclear.
+        case problem
+        /// The daemon confirmed that this request was carried out.
+        case success
+        /// A state was observed, but not attributable to this request.
+        case observed
+    }
+
     public var routeID: String?
     public var text: String
+    public var kind: Kind
 
-    public init(routeID: String?, text: String) {
+    public init(routeID: String?, text: String, kind: Kind = .problem) {
         self.routeID = routeID
         self.text = text
+        self.kind = kind
     }
 }
 
@@ -358,7 +371,8 @@ public final class AppModel {
         for (routeID, pending) in pendingReconciliations {
             if Self.isExpectationMet(pending.expectation, routeID: routeID, in: snapshot) {
                 pendingReconciliations[routeID] = nil
-                confirmations.append(RouteFeedback(routeID: routeID, text: Self.confirmationText(for: pending)))
+                confirmations.append(RouteFeedback(routeID: routeID, text: Self.confirmationText(for: pending),
+                                                   kind: Self.confirmationKind(for: pending)))
             } else if Self.shareStartIsInProgress(pending.expectation, routeID: routeID, in: snapshot) {
                 // A visible in-progress start (accepted, tunnel still
                 // booting) is better information than "unclear": keep
@@ -398,6 +412,18 @@ public final class AppModel {
             return L10n.format("Geprüft: Ein passender öffentlicher Link für „%@“ ist jetzt aktiv (ob deine Anfrage ihn erstellt hat, ist nicht eindeutig feststellbar).", name)
         default:
             return explicitSuccessText(operation: pending.operation)
+        }
+    }
+
+    /// Presentation of a reconciled confirmation: the two observed-state
+    /// cases above stay neutral, every other one is proven by its visible
+    /// effect and reads as a success.
+    static func confirmationKind(for pending: PendingReconciliation) -> RouteFeedback.Kind {
+        switch pending.expectation {
+        case .addedManual, .shareActive(true, name: _, pinnedPort: _, started: _):
+            return .observed
+        default:
+            return .success
         }
     }
 
@@ -759,7 +785,7 @@ public final class AppModel {
     /// read-only `share-link` command, so no full link lingers in memory.
     public func startShare(route: Route, ttlMinutes: Double) async -> MutationOutcome {
         let started = PendingReconciliation.ShareStartTraits(ttlMinutes: ttlMinutes, startedAt: Date())
-        let operation = L10n.text("Öffentlicher Link erstellen")
+        let operation = L10n.text("Öffentlichen Link erstellen")
         let outcome = await perform(routeID: route.id, operation: operation,
                               expectation: .shareActive(true, name: route.name, pinnedPort: route.port, started: started)) {
             _ = try await api.share(name: route.name, ttlMinutes: ttlMinutes, expectedRouteRevision: route.revision)
@@ -769,7 +795,8 @@ public final class AppModel {
             // proof. Only here — never on the reconciled-state path — may
             // the success wording be shown.
             feedback = RouteFeedback(routeID: route.id,
-                                     text: Self.explicitSuccessText(operation: operation))
+                                     text: Self.explicitSuccessText(operation: operation),
+                                     kind: .success)
         }
         return outcome
     }

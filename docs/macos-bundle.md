@@ -98,6 +98,13 @@ any privileged setting.
      payload intact.
   2. Writes `~/Library/LaunchAgents/dev.portname.daemon.plist` and loads it
      with `launchctl bootstrap gui/<uid>` (bootout first, failure tolerated).
+- From the app: on first start, while the daemon is unreachable and no
+  LaunchAgent exists, the panel offers "Set Up Background Service", which
+  runs the same bundled `portname-cli install` (fixed executable, argument
+  array, user context) and switches to the project list once the daemon
+  answers. With an agent in place the panel never offers it: an unreachable
+  daemon is then a different problem, and re-running install from the app
+  could re-point a developer's agent at the bundle.
 - **Idempotent**: re-running `install` is the repair path. An intact payload
   with the same manifest content id is left untouched; a damaged or outdated
   one is replaced. The agent plist is rewritten and the agent reloaded.

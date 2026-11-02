@@ -10,6 +10,8 @@
 	<string>%@ im Browser öffnen</string>
 	<key>%ld Projekte · Hintergrunddienst verbunden</key>
 	<string>%ld Projekte · Hintergrunddienst verbunden</string>
+	<key>1 Projekt · Hintergrunddienst verbunden</key>
+	<string>1 Projekt · Hintergrunddienst verbunden</string>
 	<key>1 Std</key>
 	<string>1 Std</string>
 	<key>15 Min</key>
@@ -76,6 +78,8 @@
 	<string>Diagnose ausblenden</string>
 	<key>Diagnose · %ld Einträge</key>
 	<string>Diagnose · %ld Einträge</string>
+	<key>Diagnose · 1 Eintrag</key>
+	<string>Diagnose · 1 Eintrag</string>
 	<key>Dienst nicht erreichbar</key>
 	<string>Dienst nicht erreichbar</string>
 	<key>Dienst nicht erreichbar (Socket nicht gefunden).</key>
@@ -354,8 +358,8 @@
 	<string>Öffentlichen Link kopieren</string>
 	<key>Öffentlicher Link beenden</key>
 	<string>Öffentlicher Link beenden</string>
-	<key>Öffentlicher Link erstellen</key>
-	<string>Öffentlicher Link erstellen</string>
+	<key>Öffentlichen Link erstellen</key>
+	<string>Öffentlichen Link erstellen</string>
 	<key>Öffentlicher Link für „%@“</key>
 	<string>Öffentlicher Link für „%@“</string>
 	<key>Öffentlicher Link hat sich geändert — Liste wurde neu geladen.</key>
@@ -372,11 +376,29 @@
 	<string>Über</string>
 	<key>„%@“ umbenennen</key>
 	<string>„%@“ umbenennen</string>
-	<key>„App beenden“ schließt nur die Oberfläche: Hintergrunddienst und %ld öffentliche(r) Link(s) laufen weiter.</key>
-	<string>„App beenden“ schließt nur die Oberfläche: Hintergrunddienst und %ld öffentliche(r) Link(s) laufen weiter.</string>
+	<key>„App beenden“ schließt nur die Oberfläche: Hintergrunddienst und öffentlicher Link laufen weiter.</key>
+	<string>„App beenden“ schließt nur die Oberfläche: Hintergrunddienst und öffentlicher Link laufen weiter.</string>
+	<key>„App beenden“ schließt nur die Oberfläche: Hintergrunddienst und %ld öffentliche Links laufen weiter.</key>
+	<string>„App beenden“ schließt nur die Oberfläche: Hintergrunddienst und %ld öffentliche Links laufen weiter.</string>
 	<key>→ :%ld</key>
 	<string>→ :%ld</string>
 	<key>⚠ Server bindet auch außerhalb von localhost</key>
 	<string>⚠ Server bindet auch außerhalb von localhost</string>
+	<key>Hintergrunddienst noch nicht eingerichtet</key>
+	<string>Hintergrunddienst noch nicht eingerichtet</string>
+	<key>Einmal einrichten</key>
+	<string>Einmal einrichten</string>
+	<key>Portname braucht einen kleinen Hintergrunddienst, der deine Dev-Server findet. Er läuft unter deinem Benutzer, braucht kein Admin-Passwort und startet beim Anmelden.</key>
+	<string>Portname braucht einen kleinen Hintergrunddienst, der deine Dev-Server findet. Er läuft unter deinem Benutzer, braucht kein Admin-Passwort und startet beim Anmelden.</string>
+	<key>Hintergrunddienst einrichten</key>
+	<string>Hintergrunddienst einrichten</string>
+	<key>Wird eingerichtet …</key>
+	<string>Wird eingerichtet …</string>
+	<key>Einrichtung fehlgeschlagen: %@</key>
+	<string>Einrichtung fehlgeschlagen: %@</string>
+	<key>Der Dienst ist eingerichtet, antwortet aber noch nicht. Bitte gleich erneut verbinden.</key>
+	<string>Der Dienst ist eingerichtet, antwortet aber noch nicht. Bitte gleich erneut verbinden.</string>
+	<key>portname-cli install wurde mit Status %ld beendet.</key>
+	<string>portname-cli install wurde mit Status %ld beendet.</string>
 </dict>
 </plist>

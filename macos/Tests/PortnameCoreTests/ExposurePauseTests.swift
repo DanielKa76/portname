@@ -230,6 +230,7 @@ final class ExposurePauseTests: XCTestCase {
         XCTAssertNil(model.pendingReconciliation(for: "/demo/shop"),
                      "the binding to the confirmed endpoint resolves it")
         XCTAssertEqual(model.feedback?.text, "Geprüft: „WLAN-Freigabe bestätigen“ wurde ausgeführt.")
+        XCTAssertEqual(model.feedback?.kind, .success, "the visible binding proves the confirmation ran")
     }
 
     func testLostConfirmationIsNotReconciledByUnrelatedStateChanges() async {

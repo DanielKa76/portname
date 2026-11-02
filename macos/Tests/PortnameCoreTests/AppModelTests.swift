@@ -256,6 +256,7 @@ final class AppModelTests: XCTestCase {
         guard case .failed(let text) = outcome else { return XCTFail("expected failure") }
         XCTAssertTrue(text.contains("already manually registered"))
         XCTAssertNotNil(model.feedback)
+        XCTAssertEqual(model.feedback?.kind, .problem, "a refusal keeps the warning look")
         // A fresh status read followed the mutation.
         XCTAssertGreaterThanOrEqual(api.statusCallCount, 2)
     }
@@ -843,6 +844,8 @@ final class AppModelTests: XCTestCase {
         XCTAssertEqual(model.feedback?.text.contains("jetzt aktiv"), true)
         XCTAssertEqual(model.feedback?.text.contains("wurde ausgeführt"), false,
                        "a competing start can never read as this request being executed")
+        XCTAssertEqual(model.feedback?.kind, .observed,
+                       "an observed state is neither a success nor a problem")
     }
 
     func testExplicitShareSuccessCarriesOperationProofWording() async {
@@ -857,6 +860,8 @@ final class AppModelTests: XCTestCase {
         XCTAssertEqual(api.shareCalls.count, 1)
         XCTAssertEqual(model.feedback?.text.contains("wurde ausgeführt"), true,
                        "an explicit successful response earns the success wording")
+        XCTAssertEqual(model.feedback?.kind, .success,
+                       "a confirmed success must not be presented like a warning")
     }
 
     // MARK: - Honest mutation outcomes (operation proof vs. state observation)

@@ -16,6 +16,8 @@ if it passed.
       outline = connecting, crossed = unreachable, warning = legacy daemon).
 - [ ] Panel opens on click; project list renders; polling cadence rises
       while open (status line stays current after starting/stopping a server).
+- [ ] A confirmed action (e.g. a created public link) shows a green check
+      line, an observed state a neutral info line; only problems are orange.
 - [ ] Dark mode and light mode: banners (orange), feedback lines and badges
       stay readable; nothing relies on color alone (icon + text always present).
 
@@ -31,13 +33,29 @@ if it passed.
 - [ ] VoiceOver: rows announce name, address and badges; buttons announce
       localized labels ("Projekte suchen …"/"Search projects …", …).
 
+## First-run setup (new)
+
+- [ ] Self-contained app on an account without the LaunchAgent: the panel
+      shows "Background service not set up yet" (grey, not an error) and a
+      "One-time setup" block with "Set Up Background Service".
+- [ ] Clicking it shows "Setting up …"; once the daemon answers, the
+      project list appears without another click.
+- [ ] A failed install keeps the block and shows "Setup failed: <last line
+      of the CLI output>"; the button stays usable.
+- [ ] With the LaunchAgent present but the daemon stopped, no setup button
+      appears; the panel keeps the diagnosis text and "Reconnect".
+- [ ] A developer build (`scripts/build-macos-app.sh`, no bundled CLI) never
+      offers setup.
+
 ## Quit semantics and global revoke (new)
 
 - [ ] With zero public links: no orange note above the footer; "App beenden"
       tooltip explains daemon/shares keep running.
 - [ ] Start a public link: the note "„App beenden“ schließt nur die
       Oberfläche …" becomes VISIBLE in the panel (not only a tooltip) and
-      states the number of running links.
+      states the number of running links: "der öffentliche Link" / "the
+      public link" for one, "2 öffentliche Links" / "2 public links" for
+      more; never "Link(s)".
 - [ ] "Alle öffentlichen Links beenden …" is visible next to it; clicking
       asks for confirmation; confirming ends every public link (verify via
       `portname status --json`: `shares` empty) and local/WLAN exposure
@@ -91,6 +109,16 @@ if it passed.
 
 ## Run log (honest record)
 
+- 2026-11-02 (`fix/app-first-run-and-feedback`): visual run on macOS 27.0.1
+  with a developer build whose bundle carried a stub `portname-cli` (no
+  launchctl) and an isolated `HOME`, so the machine's real LaunchAgent was
+  never touched. Seen in English and German: the first-run block, "Setting
+  up …", a failed setup with the stub's last output line, a successful setup
+  that switched to the list ("1 project · daemon connected"), the green
+  "Done: the daemon confirmed …" line in the share view and in the project
+  row (no longer clipped; the panel shrinks back when it is dismissed), and
+  the quit note for one link. Not run: the real `portname-cli install` from
+  a signed bundle on a clean account.
 - 2026-09-18 (`feat/06-ux-diagnostics`): NO visual GUI run performed — the
   working environment has no GUI/screen access for this session and
   `swift test` is currently blocked by the toolchain situation (CLT ships no

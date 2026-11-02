@@ -45,7 +45,7 @@ struct ShareView: View {
             }
 
             if let feedback = model.feedback, feedback.routeID == route.id {
-                FeedbackLine(text: feedback.text, onDismiss: { model.dismissFeedback() })
+                FeedbackLine(text: feedback.text, kind: feedback.kind, onDismiss: { model.dismissFeedback() })
             }
         }
     }

@@ -18,6 +18,10 @@ struct MenuBarPanel: View {
     @State private var mode: PanelMode = .list
     @State private var diagnosticsExpanded = false
     @State private var confirmRevokeAll = false
+    @State private var setupRunning = false
+    @State private var setupError: String?
+    /// Measured height of the list content; 0 until the first layout pass.
+    @State private var measuredListHeight: CGFloat = 0
     @FocusState private var searchFocused: Bool
 
     var body: some View {
@@ -131,8 +135,9 @@ struct MenuBarPanel: View {
     /// the daemon) running, right next to the distinct global revoke.
     private var quitSemanticsNote: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text(L10n.format("„App beenden“ schließt nur die Oberfläche: Hintergrunddienst und %ld öffentliche(r) Link(s) laufen weiter.",
-                             model.status?.shares.filter { ($0.phase == .active || $0.phase == .starting) && $0.expired != true }.count ?? 0))
+            Text(L10n.plural(model.status?.shares.filter { ($0.phase == .active || $0.phase == .starting) && $0.expired != true }.count ?? 0,
+                             one: "„App beenden“ schließt nur die Oberfläche: Hintergrunddienst und öffentlicher Link laufen weiter.",
+                             other: "„App beenden“ schließt nur die Oberfläche: Hintergrunddienst und %ld öffentliche Links laufen weiter."))
                 .font(.caption)
                 .foregroundStyle(.orange)
                 .fixedSize(horizontal: false, vertical: true)
@@ -161,7 +166,7 @@ struct MenuBarPanel: View {
                 .help(L10n.text("Beendet jeden öffentlichen Link über den Hintergrunddienst — lokale Adressen und WLAN-Freigaben bleiben unverändert."))
             }
             if let feedback = model.feedback, feedback.routeID == "revoke-all" {
-                FeedbackLine(text: feedback.text, onDismiss: { model.dismissFeedback() })
+                FeedbackLine(text: feedback.text, kind: feedback.kind, onDismiss: { model.dismissFeedback() })
             }
         }
         .padding(8)
@@ -215,7 +220,12 @@ struct MenuBarPanel: View {
                 Label(L10n.text("Verbinde mit Hintergrunddienst …"), systemImage: "hourglass")
                     .foregroundStyle(.secondary)
             case .connected:
-                Text(L10n.format("%ld Projekte · Hintergrunddienst verbunden", model.routes.count))
+                Text(L10n.plural(model.routes.count,
+                                 one: "1 Projekt · Hintergrunddienst verbunden",
+                                 other: "%ld Projekte · Hintergrunddienst verbunden"))
+                    .foregroundStyle(.secondary)
+            case .unreachable where showsFirstRunSetup:
+                Label(L10n.text("Hintergrunddienst noch nicht eingerichtet"), systemImage: "power.circle")
                     .foregroundStyle(.secondary)
             case .unreachable:
                 Label(model.lastErrorText ?? L10n.text("Dienst nicht erreichbar"), systemImage: "bolt.slash")
@@ -307,15 +317,29 @@ struct MenuBarPanel: View {
                     staleSection
                 }
             }
+            // Rows grow with their notes (a feedback line, a pending result,
+            // a paused Wi-Fi share): measure the stack instead of trusting
+            // the fixed-row estimate, which clipped such lines.
+            .onGeometryChange(for: CGFloat.self) { proxy in
+                proxy.size.height
+            } action: { height in
+                measuredListHeight = height
+            }
         }
         .frame(height: listHeight)
     }
 
     /// The menubar window sizes to the ideal content height; a bare
-    /// ScrollView reports none. Estimate the row stack, capped at 480.
+    /// ScrollView reports none. The measured row stack decides, capped at
+    /// 480; before the first measurement an estimate stands in.
+    private var listHeight: CGFloat {
+        guard measuredListHeight < 1 else { return min(480, max(56, measuredListHeight.rounded(.up))) }
+        return estimatedListHeight
+    }
+
     /// Diagnostics count only while expanded — collapsed by default, the
     /// section is a single caption line.
-    private var listHeight: CGFloat {
+    private var estimatedListHeight: CGFloat {
         let rowHeight: CGFloat = 52
         let staleCount = (diagnosticsExpanded && model.searchText.isEmpty) ? model.staleListeners.count : 0
         let staleHeight: CGFloat = staleCount > 0 ? CGFloat(staleCount) * 20 + 40 : 0
@@ -347,7 +371,7 @@ struct MenuBarPanel: View {
             } label: {
                 Label(diagnosticsExpanded
                       ? L10n.text("Diagnose ausblenden")
-                      : L10n.format("Diagnose · %ld Einträge", model.staleListeners.count),
+                      : L10n.plural(model.staleListeners.count, one: "Diagnose · 1 Eintrag", other: "Diagnose · %ld Einträge"),
                       systemImage: diagnosticsExpanded ? "chevron.down" : "chevron.right")
                     .font(.caption)
                     .foregroundStyle(.secondary)
@@ -413,7 +437,91 @@ struct MenuBarPanel: View {
         .padding(.top, 2)
     }
 
+    // MARK: - First-run setup
+
+    /// The CLI to run for setup: only while nothing was ever loaded, the
+    /// daemon is unreachable and no LaunchAgent exists (ServiceSetup).
+    private var setupCLI: String? {
+        guard model.connection == .unreachable, model.status == nil else { return nil }
+        return BackgroundServiceSetup.offeredCLI()
+    }
+
+    /// The setup view stays while it runs or reports a failure, even though
+    /// the agent file it just wrote ends the offer itself.
+    private var showsFirstRunSetup: Bool {
+        model.status == nil && (setupRunning || setupError != nil || setupCLI != nil)
+    }
+
+    private var firstRunSetup: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text(L10n.text("Einmal einrichten"))
+                .font(.callout.weight(.semibold))
+            Text(L10n.text("Portname braucht einen kleinen Hintergrunddienst, der deine Dev-Server findet. Er läuft unter deinem Benutzer, braucht kein Admin-Passwort und startet beim Anmelden."))
+                .font(.callout)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+            HStack(spacing: 8) {
+                if let cli = setupCLI {
+                    Button(L10n.text("Hintergrunddienst einrichten")) { runSetup(cli: cli) }
+                        .buttonStyle(.borderedProminent)
+                        .disabled(setupRunning)
+                } else if !setupRunning {
+                    Button(L10n.text("Erneut verbinden")) {
+                        setupError = nil
+                        Task { await model.refreshNow() }
+                    }
+                }
+                if setupRunning {
+                    ProgressView()
+                        .controlSize(.small)
+                    Text(L10n.text("Wird eingerichtet …"))
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+            }
+            if let setupError {
+                FeedbackLine(text: L10n.format("Einrichtung fehlgeschlagen: %@", setupError),
+                             onDismiss: { self.setupError = nil })
+            }
+        }
+        .padding(.vertical, 10)
+    }
+
+    private func runSetup(cli: String) {
+        setupRunning = true
+        setupError = nil
+        Task {
+            if let failure = await BackgroundServiceSetup.install(cli: cli) {
+                setupError = failure
+                setupRunning = false
+                return
+            }
+            // launchd starts the daemon right away; its socket appears within
+            // a second or two. Poll briefly instead of waiting for the next
+            // regular refresh.
+            for _ in 0..<20 where model.connection != .connected {
+                await model.refreshNow()
+                if model.connection == .connected { break }
+                try? await Task.sleep(for: .milliseconds(500))
+            }
+            setupRunning = false
+            if model.connection != .connected {
+                setupError = L10n.text("Der Dienst ist eingerichtet, antwortet aber noch nicht. Bitte gleich erneut verbinden.")
+            }
+        }
+    }
+
     private var unreachablePlaceholder: some View {
+        Group {
+            if showsFirstRunSetup {
+                firstRunSetup
+            } else {
+                diagnosisPlaceholder
+            }
+        }
+    }
+
+    private var diagnosisPlaceholder: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text(L10n.text("Dienst nicht erreichbar"))
                 .font(.callout)

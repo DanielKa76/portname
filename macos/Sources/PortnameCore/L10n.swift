@@ -55,6 +55,13 @@ public enum L10n {
         String(format: text(german), arguments: args)
     }
 
+    /// Count wording. German and English only tell one from many, so each
+    /// count string comes as a sentence for exactly one (`one`, no
+    /// placeholder) and a pattern for every other count (`other`, `%ld`).
+    public static func plural(_ count: Int, one: String, other: String) -> String {
+        count == 1 ? text(one) : format(other, count)
+    }
+
     /// Loads one localization's table explicitly (deterministic for tests).
     static func table(for localization: String) -> [String: String] {
         guard

@@ -96,7 +96,7 @@ struct RenameForm: View {
             }
 
             if let feedback = model.feedback, feedback.routeID == route.id {
-                FeedbackLine(text: feedback.text, onDismiss: { model.dismissFeedback() })
+                FeedbackLine(text: feedback.text, kind: feedback.kind, onDismiss: { model.dismissFeedback() })
             }
 
             HStack {
@@ -202,7 +202,7 @@ struct AddManualForm: View {
             }
 
             if let feedback = model.feedback, feedback.routeID == "add-manual" {
-                FeedbackLine(text: feedback.text, onDismiss: { model.dismissFeedback() })
+                FeedbackLine(text: feedback.text, kind: feedback.kind, onDismiss: { model.dismissFeedback() })
             }
 
             HStack {

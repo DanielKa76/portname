@@ -77,7 +77,7 @@ struct ProjectRow: View {
             }
 
             if let actionError = model.feedback, actionError.routeID == route.id {
-                FeedbackLine(text: actionError.text, onDismiss: { model.dismissFeedback() })
+                FeedbackLine(text: actionError.text, kind: actionError.kind, onDismiss: { model.dismissFeedback() })
             }
 
             if let pending = model.pendingReconciliation(for: route.id) {
@@ -296,12 +296,31 @@ struct ShareCountdownBadge: View {
 
 struct FeedbackLine: View {
     let text: String
+    var kind: RouteFeedback.Kind = .problem
     let onDismiss: () -> Void
+
+    /// A confirmed success reads as one (green check), an observation stays
+    /// neutral; only problems keep the orange warning look.
+    private var icon: String {
+        switch kind {
+        case .problem: return "exclamationmark.circle"
+        case .success: return "checkmark.circle.fill"
+        case .observed: return "info.circle"
+        }
+    }
+
+    private var tint: Color {
+        switch kind {
+        case .problem: return .orange
+        case .success: return .green
+        case .observed: return .secondary
+        }
+    }
 
     var body: some View {
         HStack(alignment: .top, spacing: 6) {
-            Image(systemName: "exclamationmark.circle")
-                .foregroundStyle(.orange)
+            Image(systemName: icon)
+                .foregroundStyle(tint)
             Text(text)
                 .font(.caption)
                 .fixedSize(horizontal: false, vertical: true)
@@ -316,6 +335,6 @@ struct FeedbackLine: View {
             .accessibilityLabel(L10n.text("Hinweis schließen"))
         }
         .padding(6)
-        .background(.orange.opacity(0.12), in: RoundedRectangle(cornerRadius: 6))
+        .background(tint.opacity(kind == .observed ? 0.08 : 0.12), in: RoundedRectangle(cornerRadius: 6))
     }
 }
