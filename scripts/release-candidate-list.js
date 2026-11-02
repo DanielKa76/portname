@@ -71,6 +71,7 @@ const INCLUDE_RULES = [
   { pattern: 'docs/architecture-notes.md', reason: 're-stated factual architecture decisions (public replacement for private plan notes)' },
   { pattern: 'docs/bind-probe.txt', reason: 'measured unprivileged bind probe referenced by README' },
   { pattern: 'docs/images/*.png', reason: 'README screenshots of the menubar app (real app, demo projects, metadata stripped)' },
+  { pattern: 'docs/images/*.gif', reason: 'README demo recording of the menubar app (real app against a demo daemon with invented projects)' },
 ];
 
 const EXCLUDE_RULES = [

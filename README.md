@@ -3,10 +3,7 @@
 Every local project gets a real, stable address — whatever port it landed on.
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/images/panel-dark.png">
-    <img src="docs/images/panel-light.png" width="466" alt="The portname menubar panel: five local projects with their .localhost names; blog is shared on the Wi-Fi, shop has a public link">
-  </picture>
+  <img src="docs/images/demo.gif" width="528" alt="Recording of the portname menubar panel: a new dev server appears as blog.localhost, blog is shared on the Wi-Fi, then a one-hour public link for docs is created and ended again">
 </p>
 
 ```
@@ -20,6 +17,33 @@ macOS 14+ (developed on macOS 26) · Node ≥ 22 · no runtime dependencies · C
 The one shipped component beyond Node: **public links** use the `cloudflared`
 binary (Quick Tunnel). If it is missing, everything local keeps working and
 only `share` says so; `portname doctor` reports it.
+
+## Download
+
+The signed and notarized menubar app is on the
+[releases page](https://github.com/DanielKa76/portname/releases). It needs
+Apple silicon and macOS 14 or later, and brings its own Node runtime and
+`cloudflared`.
+
+1. Download `Portname-macos.zip`, unzip it and move `Portname.app` to
+   `/Applications`.
+2. Set up the background daemon once. It runs as your user; no admin
+   password:
+
+   ```bash
+   /Applications/Portname.app/Contents/Resources/bin/portname-cli install
+   ```
+
+3. Open Portname. It lives in the menu bar.
+
+For the `portname` command in a terminal, link the bundled wrapper into a
+directory on your `PATH`, for example:
+
+```bash
+ln -s ~/Library/Application\ Support/Portname/bin/portname ~/.local/bin/portname
+```
+
+Updates, uninstall and what stays on disk: `docs/macos-bundle.md`.
 
 ## Install from source
 
@@ -75,6 +99,13 @@ portname uninstall
 ```
 
 ## Menubar app
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/panel-dark.png">
+    <img src="docs/images/panel-light.png" width="466" alt="The portname menubar panel: five local projects with their .localhost names; blog is shared on the Wi-Fi, shop has a public link">
+  </picture>
+</p>
 
 The optional menubar app lists the same projects. Per project it opens or
 copies the address, renames it, picks the primary service, and switches
