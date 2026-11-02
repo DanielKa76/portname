@@ -67,8 +67,8 @@ applies: screenshots/notes only from actual runs, never staged.
       the expected Developer-ID-verified dialog (no right-click workaround
       needed); for the `beta-adhoc` artifact the expected block dialog must
       appear (it is not distributable).
-      Status: **OPEN** — requires Developer ID signature + notarization
-      (below) and a second machine.
+      Status: **OPEN** — the Developer ID signature and notarization exist
+      (below); a second machine is still needed.
 
 ## OPEN — reboot / login restart
 
@@ -109,14 +109,17 @@ applies: screenshots/notes only from actual runs, never staged.
 
 ## OPEN — Developer ID signing + notarization (execution)
 
-- [ ] Run `scripts/release-package.sh` with `MACOS_SIGNING_IDENTITY` and
+- [x] Run `scripts/release-package.sh` with `MACOS_SIGNING_IDENTITY` and
       `NOTARYTOOL_KEYCHAIN_PROFILE` configured; confirm notarytool "Accepted",
       stapler validate, `spctl --assess --type execute` on the stapled app.
+      Done for 0.1.0 (2026-11-01) and 0.1.1 (2026-11-02) on macOS 27.0.1:
+      notarytool "Accepted", staple and validate worked, spctl reports
+      "Notarized Developer ID". Both zips are published as GitHub
+      pre-releases with their SHA-256 in the release notes. The first
+      codesign run on a machine asks for keychain access to the signing key.
 - [ ] Confirm the fail-closed behavior once with credentials absent (script
       must print "NOT RELEASED" and produce nothing).
-      Status: **OPEN** — no signing identity and no notarization credentials
-      exist for this project; nothing was signed, notarized, uploaded or
-      published. The script was reviewed but not executed.
+      Status: **OPEN** — not run yet.
 
 ## OPEN — GUI smoke on the bundle
 
